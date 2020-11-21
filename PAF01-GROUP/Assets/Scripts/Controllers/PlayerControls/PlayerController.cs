@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    #region Variable Declaration
     Rigidbody rb;
     [SerializeField] float speed = 10f;
+    [Range(0, 5)]
+    [SerializeField] float movementRange = 0f;
+    [SerializeField] float rayLenght = 0f;
 
     public LayerMask whatIsClickable;
-
-    [Range (0,5)]
-    [SerializeField] float movementRange = 0f;
+    public LayerMask staticObstacle;
 
     [HideInInspector]
     public Vector3 _targetPos;
@@ -19,13 +21,26 @@ public class PlayerController : MonoBehaviour
 
     public event System.Action OnPlayerTargetSet;
 
+    private Vector3 fwd, bck, rgt, lft;
+    #endregion
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
+
+    private void Start()
+    {
+        fwd = transform.TransformDirection(Vector3.forward);
+        rgt = transform.TransformDirection(Vector3.right);
+        lft = transform.TransformDirection(Vector3.left);
+        bck = transform.TransformDirection(Vector3.back);
+    }
     // Update is called once per frame
     void Update()
     {
+
+
         if (Input.GetMouseButtonDown(1))
         {
             SetTargetPosition();
@@ -33,11 +48,12 @@ public class PlayerController : MonoBehaviour
 
         if (_isMoving)
         {
-            
+
             if (Vector3.Distance(transform.position, _targetPos) <= movementRange)
                 Move();
             else
                 Debug.Log("Area out of player movement range");
+
         }
     }
 
@@ -59,9 +75,12 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        checkHits();
+
         transform.position = Vector3.MoveTowards(transform.position, _targetPos, speed * Time.deltaTime);
 
-        if (Vector3.Distance(_targetPos, transform.position) < .2f)
+
+        if (Vector3.Distance(_targetPos, transform.position) < .1f)
         {
             //Debug.Log("I'm close enough");
             _isMoving = false;
@@ -72,6 +91,56 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, movementRange);
         Gizmos.color = Color.green;
+    }
+
+    private void checkHits()
+    {
+        RaycastHit hit;
+
+        //Detecting collision with static objects
+
+        if (Physics.Raycast(transform.position, fwd, out hit, rayLenght, staticObstacle.value))
+        {
+            transform.position += transform.TransformDirection(Vector3.back * .2f);
+            _isMoving = false;
+            Debug.Log("Can't move in that direction");
+        }
+
+        if (Physics.Raycast(transform.position, rgt, out hit, rayLenght, staticObstacle.value))
+        {
+            transform.position += transform.TransformDirection(Vector3.left * .2f);
+            _isMoving = false;
+            Debug.Log("Can't move in that direction");
+        }
+
+        if (Physics.Raycast(transform.position, lft, out hit, rayLenght, staticObstacle.value))
+        {
+            transform.position += transform.TransformDirection(Vector3.right * .2f);
+            _isMoving = false;
+            Debug.Log("Can't move in that direction");
+        }
+        if (Physics.Raycast(transform.position, bck, out hit, rayLenght, staticObstacle.value))
+        {
+            transform.position += transform.TransformDirection(Vector3.forward * .2f);
+            _isMoving = false;
+            Debug.Log("Can't move in that direction");
+        }
+
+        //Detecting collision with pushable objects and checking whether they are able to move one step further or not
+
+        if (Physics.Raycast(transform.position, fwd, out hit, rayLenght))
+        {
+            if(hit.collider.gameObject.tag == "Pushable")
+            {
+                if (hit.collider.GetComponent<Pushable>().canMove == false) 
+                {
+                    transform.position += transform.TransformDirection(Vector3.back * 1f);
+                    _isMoving = false;
+                    Debug.Log("Can't move in that direction");
+                }
+            }
+            
+        }
     }
 
 }
