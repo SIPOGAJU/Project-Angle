@@ -59,9 +59,9 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        rb.position = Vector3.MoveTowards(transform.position, _targetPos, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _targetPos, speed * Time.deltaTime);
 
-        if (Vector3.Distance(_targetPos, transform.position) < .5f)
+        if (Vector3.Distance(_targetPos, transform.position) < .2f)
         {
             //Debug.Log("I'm close enough");
             _isMoving = false;

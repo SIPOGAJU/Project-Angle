@@ -8170,6 +8170,22 @@ PrefabInstance:
       propertyPath: mouseSensivity
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3564035153085814356, guid: 20ace2cf2e9813f429302a7e862f0a88, type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564035153085814357, guid: 20ace2cf2e9813f429302a7e862f0a88, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564035153085814357, guid: 20ace2cf2e9813f429302a7e862f0a88, type: 3}
+      propertyPath: m_Drag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564035153085814357, guid: 20ace2cf2e9813f429302a7e862f0a88, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20ace2cf2e9813f429302a7e862f0a88, type: 3}
 --- !u!1001 &7197544967235821910
