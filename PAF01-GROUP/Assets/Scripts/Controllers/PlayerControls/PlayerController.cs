@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 100, whatIsClickable.value))
         {
-            _targetPos = hit.transform.position;
+            _targetPos = hit.transform.position + (transform.up * 0.5f);
             _isMoving = true;
 
             if (Vector3.Distance(transform.position, _targetPos) <= movementRange && Vector3.Distance(transform.position, _targetPos) >= 1.5f)
