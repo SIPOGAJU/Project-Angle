@@ -41,6 +41,8 @@ public class gameManager : MonoBehaviour
         collectible = FindObjectOfType<Collectible>(); 
         collectible.OnCollected += SetCollectibleAmount; 
 
+        
+
         player = FindObjectOfType<PlayerController>(); 
 
         GameState = GAME_STATE.gameRunning; 
@@ -48,7 +50,7 @@ public class gameManager : MonoBehaviour
 
     public void Update() 
     {
-        
+
         
     }
 
@@ -61,4 +63,6 @@ public class gameManager : MonoBehaviour
         }
             
     }
+
+    
 }
