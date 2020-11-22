@@ -36,6 +36,8 @@ public class SimonsPushables : MonoBehaviour
         //Needs to be ignored by own raycaast
         objectCollider = GetComponent<Collider>(); 
         player = GameObject.FindGameObjectWithTag("Player"); 
+
+        
         
     }
 
@@ -106,7 +108,7 @@ public class SimonsPushables : MonoBehaviour
         }
         
         
-        Debug.Log(moveDirection);
+        //Debug.Log(moveDirection);
 
         CheckForObstacle(); 
         
@@ -116,23 +118,19 @@ public class SimonsPushables : MonoBehaviour
         
         RaycastHit hit;
         
-        if(Physics.Raycast(transform.position, moveDirection, out hit, 10))
+        if(Physics.Raycast(transform.position, moveDirection, out hit, 3))
         {
-            if(hit.collider != null)
-            {
-                canMove = false;
-                Debug.Log("Do Not Move Player!"); 
-            }
-                
-           
+            canMove = false;
+            Debug.Log("Do Not Move Player!"); 
+
         }
-        else
+        if(!Physics.Raycast(transform.position, moveDirection, out hit, 3))
         {
             canMove = true; 
-            Debug.Log("Move Player"); 
+            Debug.Log("Can Move"); 
             Move(); 
-            //Only now tell Player to move; 
         }
+
     }
 
     public void Move()

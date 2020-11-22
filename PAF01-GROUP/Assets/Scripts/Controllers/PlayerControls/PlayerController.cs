@@ -128,56 +128,56 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Can't move in that direction");
         }
 
-        //Detecting collision with pushable objects and checking whether they are able to move one step further or not
+    //     //Detecting collision with pushable objects and checking whether they are able to move one step further or not
 
-        if (Physics.Raycast(transform.position, fwd, out hit, rayLenght))
-        {
-            if(hit.collider.gameObject.tag == "Pushable")
-            {
-                if (hit.collider.GetComponent<Pushable>().canMove == false) 
-                {
-                    transform.position = currentPos;
-                    _isMoving = false;
-                    Debug.Log("Can't move in that direction");
-                }
-            }
-        }
-        if (Physics.Raycast(transform.position, bck, out hit, rayLenght))
-        {
-            if (hit.collider.gameObject.tag == "Pushable")
-            {
-                if (hit.collider.GetComponent<Pushable>().canMove == false)
-                {
-                    transform.position = currentPos;
-                    _isMoving = false;
-                    Debug.Log("Can't move in that direction");
-                }
-            }
-        }
-        if (Physics.Raycast(transform.position, lft, out hit, rayLenght))
-        {
-            if (hit.collider.gameObject.tag == "Pushable")
-            {
-                if (hit.collider.GetComponent<Pushable>().canMove == false)
-                {
-                    transform.position = currentPos;
-                    _isMoving = false;
-                    Debug.Log("Can't move in that direction");
-                }
-            }
-        }
-        if (Physics.Raycast(transform.position, rgt, out hit, rayLenght))
-        {
-            if (hit.collider.gameObject.tag == "Pushable")
-            {
-                if (hit.collider.GetComponent<Pushable>().canMove == false)
-                {
-                    transform.position = currentPos;
-                    _isMoving = false;
-                    Debug.Log("Can't move in that direction");
-                }
-            }
-        }
-    }
+    //     if (Physics.Raycast(transform.position, fwd, out hit, rayLenght))
+    //     {
+    //         if(hit.collider.gameObject.tag == "Pushable")
+    //         {
+    //             if (hit.collider.GetComponent<SimonsPushables>().canMove == false) 
+    //             {
+    //                 transform.position = currentPos;
+    //                 _isMoving = false;
+    //                 Debug.Log("Can't move in that direction");
+    //             }
+    //         }
+    //     }
+    //     if (Physics.Raycast(transform.position, bck, out hit, rayLenght))
+    //     {
+    //         if (hit.collider.gameObject.tag == "Pushable")
+    //         {
+    //             if (hit.collider.GetComponent<SimonsPushables>().canMove == false)
+    //             {
+    //                 transform.position = currentPos;
+    //                 _isMoving = false;
+    //                 Debug.Log("Can't move in that direction");
+    //             }
+    //         }
+    //     }
+    //     if (Physics.Raycast(transform.position, lft, out hit, rayLenght))
+    //     {
+    //         if (hit.collider.gameObject.tag == "Pushable")
+    //         {
+    //             if (hit.collider.GetComponent<SimonsPushables>().canMove == false)
+    //             {
+    //                 transform.position = currentPos;
+    //                 _isMoving = false;
+    //                 Debug.Log("Can't move in that direction");
+    //             }
+    //         }
+    //     }
+    //     if (Physics.Raycast(transform.position, rgt, out hit, rayLenght))
+    //     {
+    //         if (hit.collider.gameObject.tag == "Pushable")
+    //         {
+    //             if (hit.collider.GetComponent<SimonsPushables>().canMove == false)
+    //             {
+    //                 transform.position = currentPos;
+    //                 _isMoving = false;
+    //                 Debug.Log("Can't move in that direction");
+    //             }
+    //         }
+    //     }
+     }
 
 }

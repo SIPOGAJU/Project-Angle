@@ -654,28 +654,14 @@ GameObject:
   - component: {fileID: 169065784}
   - component: {fileID: 169065783}
   - component: {fileID: 169065782}
-  - component: {fileID: 169065781}
+  - component: {fileID: 169065786}
   m_Layer: 0
   m_Name: NEW Pushable
-  m_TagString: Untagged
+  m_TagString: Pushable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &169065781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169065780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 113ad7c1861b238458a2edd25aa82f1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirection: {x: 0, y: 0, z: 0}
-  moveLength: 3
 --- !u!65 &169065782
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -752,6 +738,21 @@ Transform:
   m_Father: {fileID: 931995867}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &169065786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169065780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4c12ec126ec094c9a1b20a80d399db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirection: {x: 0, y: 0, z: 0}
+  moveLength: 3
+  canMove: 0
 --- !u!1 &178796258
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,7 +5063,7 @@ GameObject:
   - component: {fileID: 706600831}
   - component: {fileID: 706600830}
   - component: {fileID: 706600829}
-  - component: {fileID: 706600828}
+  - component: {fileID: 706600833}
   m_Layer: 0
   m_Name: NEW Pushable
   m_TagString: Untagged
@@ -5070,20 +5071,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &706600828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706600827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 113ad7c1861b238458a2edd25aa82f1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirection: {x: 0, y: 0, z: 0}
-  moveLength: 3
 --- !u!65 &706600829
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5160,6 +5147,21 @@ Transform:
   m_Father: {fileID: 931995867}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &706600833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706600827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4c12ec126ec094c9a1b20a80d399db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirection: {x: 0, y: 0, z: 0}
+  moveLength: 3
+  canMove: 0
 --- !u!1 &745355278
 GameObject:
   m_ObjectHideFlags: 0
@@ -6293,28 +6295,14 @@ GameObject:
   - component: {fileID: 935292479}
   - component: {fileID: 935292478}
   - component: {fileID: 935292477}
-  - component: {fileID: 935292476}
+  - component: {fileID: 935292481}
   m_Layer: 0
   m_Name: NEW Pushable
-  m_TagString: Untagged
+  m_TagString: Pushable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &935292476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935292475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 113ad7c1861b238458a2edd25aa82f1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirection: {x: 0, y: 0, z: 0}
-  moveLength: 3
 --- !u!65 &935292477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6391,6 +6379,21 @@ Transform:
   m_Father: {fileID: 931995867}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &935292481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935292475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4c12ec126ec094c9a1b20a80d399db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirection: {x: 0, y: 0, z: 0}
+  moveLength: 3
+  canMove: 0
 --- !u!1 &937191082
 GameObject:
   m_ObjectHideFlags: 0
@@ -6713,28 +6716,14 @@ GameObject:
   - component: {fileID: 964074080}
   - component: {fileID: 964074079}
   - component: {fileID: 964074078}
-  - component: {fileID: 964074077}
+  - component: {fileID: 964074082}
   m_Layer: 0
   m_Name: NEW Pushable
-  m_TagString: Untagged
+  m_TagString: Pushable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &964074077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964074076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 113ad7c1861b238458a2edd25aa82f1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirection: {x: 0, y: 0, z: 0}
-  moveLength: 3
 --- !u!65 &964074078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6811,6 +6800,21 @@ Transform:
   m_Father: {fileID: 931995867}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &964074082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964074076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4c12ec126ec094c9a1b20a80d399db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirection: {x: 0, y: 0, z: 0}
+  moveLength: 3
+  canMove: 0
 --- !u!1 &974847960
 GameObject:
   m_ObjectHideFlags: 0
@@ -8622,6 +8626,14 @@ PrefabInstance:
     - target: {fileID: 3564035153085814356, guid: 20ace2cf2e9813f429302a7e862f0a88, type: 3}
       propertyPath: mouseSensivity
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564035153085814356, guid: 20ace2cf2e9813f429302a7e862f0a88, type: 3}
+      propertyPath: rayLenght
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564035153085814356, guid: 20ace2cf2e9813f429302a7e862f0a88, type: 3}
+      propertyPath: staticObstacle.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20ace2cf2e9813f429302a7e862f0a88, type: 3}
