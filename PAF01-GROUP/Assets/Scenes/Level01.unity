@@ -2604,7 +2604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7197544966072177739, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 7197544966072177739, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2612,7 +2612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7197544966072177739, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.84
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7197544966072177739, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2657,6 +2657,10 @@ PrefabInstance:
     - target: {fileID: 7197544966072177743, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
       propertyPath: m_Name
       value: Pushable (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197544966072177743, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
@@ -3154,6 +3158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporter (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 521427339606538651, guid: fe13dcecf52f9364c8e1ff271f8885db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8836298463332612016, guid: fe13dcecf52f9364c8e1ff271f8885db, type: 3}
       propertyPath: player
       value: 
@@ -3561,6 +3569,10 @@ PrefabInstance:
     - target: {fileID: 7197544966072177743, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
       propertyPath: m_Name
       value: Pushable (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197544966072177743, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
@@ -5521,7 +5533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300998005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.59, y: 8.12, z: -3.03}
+  m_LocalPosition: {x: 1.63, y: 8.12, z: -3.03}
   m_LocalScale: {x: 5.6971197, y: 1, z: 2.8147738}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6479,7 +6491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7197544966072177739, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.98
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7197544966072177739, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6532,6 +6544,10 @@ PrefabInstance:
     - target: {fileID: 7197544966072177743, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
       propertyPath: m_Name
       value: Pushable (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197544966072177743, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
@@ -8069,6 +8085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pushable
       objectReference: {fileID: 0}
+    - target: {fileID: 7197544966072177743, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 100734ebc60e1734b91e84070172a38f, type: 3}
 --- !u!1 &2023064966
@@ -8584,6 +8604,10 @@ PrefabInstance:
     - target: {fileID: 521427339606538651, guid: fe13dcecf52f9364c8e1ff271f8885db, type: 3}
       propertyPath: m_Name
       value: Teleporter
+      objectReference: {fileID: 0}
+    - target: {fileID: 521427339606538651, guid: fe13dcecf52f9364c8e1ff271f8885db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8836298463332612016, guid: fe13dcecf52f9364c8e1ff271f8885db, type: 3}
       propertyPath: exit

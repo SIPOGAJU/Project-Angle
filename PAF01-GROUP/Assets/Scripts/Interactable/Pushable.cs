@@ -36,6 +36,7 @@ public class Pushable : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        //What happens if player is pushing
         if (collision.gameObject.tag == "Player")
         {
             currentPos = transform.position;
@@ -47,6 +48,8 @@ public class Pushable : MonoBehaviour
             direction = (target - playerPos).normalized;
             reposition = transform.position + direction * unitsToMove;
         }
+
+        //What happens if player is pushing but we are colliding with another object in the other end
 
         if(collision.gameObject.tag == "Pushable" ||
             collision.gameObject.tag == "Patrol" ||
@@ -75,6 +78,9 @@ public class Pushable : MonoBehaviour
             }
         }
     }
+
+    //
+
     IEnumerator BackToPosition()
     {
         canMove = false;
