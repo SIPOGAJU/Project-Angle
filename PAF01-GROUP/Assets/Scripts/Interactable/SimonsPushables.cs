@@ -11,6 +11,8 @@ public class SimonsPushables : MonoBehaviour
     public Vector3 moveDirection; 
     public float moveLength; 
 
+    public bool canMove; 
+
 
     ////////////////// PUSHABLES ///////////////////////////
     // 
@@ -117,11 +119,16 @@ public class SimonsPushables : MonoBehaviour
         if(Physics.Raycast(transform.position, moveDirection, out hit, 10))
         {
             if(hit.collider != null)
+            {
+                canMove = false;
                 Debug.Log("Do Not Move Player!"); 
+            }
+                
            
         }
         else
         {
+            canMove = true; 
             Debug.Log("Move Player"); 
             Move(); 
             //Only now tell Player to move; 
