@@ -8,6 +8,10 @@ public class mySceneManager : MonoBehaviour
     public static mySceneManager instance;
     //mySceneManager is name of Script and SceneManager is Class from Unity; 
 
+    [Header("Levels")]
+    public Scene Level01; 
+    public Scene Level02; 
+
     void Awake()
     {
         if(instance == null) { 
@@ -29,5 +33,20 @@ public class mySceneManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameManager.instance.GameState = gameManager.GAME_STATE.gameRunning;
         
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        gameManager.instance.GameState = gameManager.GAME_STATE.gameRunning;
+    }
+    public void LoadPreviousScene()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+            return; 
+
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+        gameManager.instance.GameState = gameManager.GAME_STATE.gameRunning;
     }
 }
