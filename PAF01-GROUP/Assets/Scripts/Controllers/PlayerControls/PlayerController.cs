@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public event System.Action OnPlayerTargetSet;
 
     private Vector3 fwd, bck, rgt, lft;
+    private Vector3 currentPos;
     #endregion
 
     private void Awake()
@@ -31,16 +32,11 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        fwd = transform.TransformDirection(Vector3.forward);
-        rgt = transform.TransformDirection(Vector3.right);
-        lft = transform.TransformDirection(Vector3.left);
-        bck = transform.TransformDirection(Vector3.back);
+        currentPos = transform.position;
     }
     // Update is called once per frame
     void Update()
     {
-
-
         if (Input.GetMouseButtonDown(1))
         {
             SetTargetPosition();
@@ -65,6 +61,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100, whatIsClickable.value))
         {
             _targetPos = hit.transform.position + (transform.up * 0.5f);
+            currentPos = transform.position;
             _isMoving = true;
 
             if (Vector3.Distance(transform.position, _targetPos) <= movementRange && Vector3.Distance(transform.position, _targetPos) >= 1.5f)
@@ -96,6 +93,11 @@ public class PlayerController : MonoBehaviour
     private void checkHits()
     {
         RaycastHit hit;
+
+        fwd = transform.forward;
+        rgt = transform.right;
+        lft = -transform.right;
+        bck = -transform.forward;
 
         //Detecting collision with static objects
 
@@ -134,12 +136,47 @@ public class PlayerController : MonoBehaviour
             {
                 if (hit.collider.GetComponent<Pushable>().canMove == false) 
                 {
-                    transform.position += transform.TransformDirection(Vector3.back * 1f);
+                    transform.position = currentPos;
                     _isMoving = false;
                     Debug.Log("Can't move in that direction");
                 }
             }
-            
+        }
+        if (Physics.Raycast(transform.position, bck, out hit, rayLenght))
+        {
+            if (hit.collider.gameObject.tag == "Pushable")
+            {
+                if (hit.collider.GetComponent<Pushable>().canMove == false)
+                {
+                    transform.position = currentPos;
+                    _isMoving = false;
+                    Debug.Log("Can't move in that direction");
+                }
+            }
+        }
+        if (Physics.Raycast(transform.position, lft, out hit, rayLenght))
+        {
+            if (hit.collider.gameObject.tag == "Pushable")
+            {
+                if (hit.collider.GetComponent<Pushable>().canMove == false)
+                {
+                    transform.position = currentPos;
+                    _isMoving = false;
+                    Debug.Log("Can't move in that direction");
+                }
+            }
+        }
+        if (Physics.Raycast(transform.position, rgt, out hit, rayLenght))
+        {
+            if (hit.collider.gameObject.tag == "Pushable")
+            {
+                if (hit.collider.GetComponent<Pushable>().canMove == false)
+                {
+                    transform.position = currentPos;
+                    _isMoving = false;
+                    Debug.Log("Can't move in that direction");
+                }
+            }
         }
     }
 

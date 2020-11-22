@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pushable : MonoBehaviour
 {
+    #region Variable Declaration
     [SerializeField] float unitsToMove = 0f;
 
     private bool isColliding;
@@ -13,10 +14,13 @@ public class Pushable : MonoBehaviour
     private PlayerController player;
     private Vector3 reposition;
     private Vector3 direction;
+    private Vector3 currentPos;
+    #endregion
 
     private void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        currentPos = transform.position;
     }
     private void Update()
     {
@@ -34,7 +38,7 @@ public class Pushable : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-
+            currentPos = transform.position;
             Debug.Log("Player is pushing");
             isColliding = true;
 
@@ -44,7 +48,9 @@ public class Pushable : MonoBehaviour
             reposition = transform.position + direction * unitsToMove;
         }
 
-        if(collision.gameObject.tag == "Pushable")
+        if(collision.gameObject.tag == "Pushable" ||
+            collision.gameObject.tag == "Patrol" ||
+            collision.gameObject.tag == "Obstacle")
         {
             Debug.Log("Collided with pushable");
             isMoving = false;
@@ -72,11 +78,13 @@ public class Pushable : MonoBehaviour
     IEnumerator BackToPosition()
     {
         canMove = false;
+        this.GetComponent<Rigidbody>().drag = 1000f;
         this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        transform.position += (-direction * 0.1f);
+        transform.position = currentPos;
         yield return new WaitForSeconds(.5f);
-        this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        transform.position += (-direction * 0.1f);
+        this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        this.GetComponent<Rigidbody>().drag = 1f;
+        transform.position = currentPos;
         canMove = true;
     }
 }
