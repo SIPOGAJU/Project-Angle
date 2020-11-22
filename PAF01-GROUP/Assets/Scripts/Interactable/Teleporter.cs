@@ -8,7 +8,6 @@ public class Teleporter : MonoBehaviour
     public PlayerController player;
 
     private bool isOverlapping;
-
     private void Update()
     {
         if(player != null)
