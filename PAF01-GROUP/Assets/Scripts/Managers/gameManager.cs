@@ -14,7 +14,7 @@ public class gameManager : MonoBehaviour
     [Header("Variables")]
 
     [SerializeField] int maxCollectibles = 1; 
-    int currentCollectibles;  
+    public int currentCollectibles;  
 
 
     public enum GAME_STATE
@@ -44,6 +44,7 @@ public class gameManager : MonoBehaviour
         
 
         player = FindObjectOfType<PlayerController>(); 
+        currentCollectibles = 0; 
 
         GameState = GAME_STATE.gameRunning; 
     }
@@ -64,5 +65,17 @@ public class gameManager : MonoBehaviour
             
     }
 
-    
+    public void PauseGame()
+    {
+        //Allows to switch back and forth;
+        if(GameState == GAME_STATE.gamePaused )
+            GameState = GAME_STATE.gameRunning; 
+        else
+            GameState = GAME_STATE.gamePaused; 
+    }
+
+    public void QuitApplication()
+    {
+        Application.Quit(); 
+    }
 }
