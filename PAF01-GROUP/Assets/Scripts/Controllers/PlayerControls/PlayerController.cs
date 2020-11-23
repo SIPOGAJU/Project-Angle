@@ -5,14 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region Variable Declaration
-    Rigidbody rb;
     [SerializeField] float speed = 10f;
     [Range(0, 5)]
     [SerializeField] float movementRange = 0f;
-    [SerializeField] float rayLenght = 0f;
 
     public LayerMask whatIsClickable;
-    public LayerMask staticObstacle;
 
     [HideInInspector]
     public Vector3 _targetPos;
@@ -21,13 +18,12 @@ public class PlayerController : MonoBehaviour
 
     public event System.Action OnPlayerTargetSet;
 
-    private Vector3 fwd, bck, rgt, lft;
     private Vector3 currentPos;
     #endregion
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+
     }
 
     private void Start()
@@ -44,7 +40,6 @@ public class PlayerController : MonoBehaviour
 
         if (_isMoving)
         {
-
             if (Vector3.Distance(transform.position, _targetPos) <= movementRange)
                 Move();
             else
@@ -60,8 +55,8 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 100, whatIsClickable.value))
         {
-            _targetPos = hit.transform.position + (transform.up * 0.5f);
             currentPos = transform.position;
+            _targetPos = hit.transform.position + (transform.up * 0.5f);
             _isMoving = true;
 
             if (Vector3.Distance(transform.position, _targetPos) <= movementRange && Vector3.Distance(transform.position, _targetPos) >= 1.5f)
@@ -72,10 +67,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        checkHits();
-
         transform.position = Vector3.MoveTowards(transform.position, _targetPos, speed * Time.deltaTime);
-
 
         if (Vector3.Distance(_targetPos, transform.position) < .1f)
         {
@@ -86,98 +78,34 @@ public class PlayerController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, movementRange);
         Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, movementRange);
     }
 
-    private void checkHits()
+    private void OnTriggerEnter(Collider other)
     {
-        RaycastHit hit;
-
-        fwd = transform.forward;
-        rgt = transform.right;
-        lft = -transform.right;
-        bck = -transform.forward;
-
-        //Detecting collision with static objects
-
-        if (Physics.Raycast(transform.position, fwd, out hit, rayLenght, staticObstacle.value))
+        if(other.CompareTag("Pushable"))
         {
-            transform.position += transform.TransformDirection(Vector3.back * .2f);
-            _isMoving = false;
-            Debug.Log("Can't move in that direction");
-        }
+            if (other.gameObject.GetComponent<SimonsPushables>().canMove == true)
+            {
+                _isMoving = true;
+            }
 
-        if (Physics.Raycast(transform.position, rgt, out hit, rayLenght, staticObstacle.value))
+            else
+            {
+                _isMoving = false;
+                transform.position = currentPos;
+            }
+        }
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Obstacle")
         {
-            transform.position += transform.TransformDirection(Vector3.left * .2f);
             _isMoving = false;
-            Debug.Log("Can't move in that direction");
+            transform.position = currentPos;
         }
-
-        if (Physics.Raycast(transform.position, lft, out hit, rayLenght, staticObstacle.value))
-        {
-            transform.position += transform.TransformDirection(Vector3.right * .2f);
-            _isMoving = false;
-            Debug.Log("Can't move in that direction");
-        }
-        if (Physics.Raycast(transform.position, bck, out hit, rayLenght, staticObstacle.value))
-        {
-            transform.position += transform.TransformDirection(Vector3.forward * .2f);
-            _isMoving = false;
-            Debug.Log("Can't move in that direction");
-        }
-
-    //     //Detecting collision with pushable objects and checking whether they are able to move one step further or not
-
-    //     if (Physics.Raycast(transform.position, fwd, out hit, rayLenght))
-    //     {
-    //         if(hit.collider.gameObject.tag == "Pushable")
-    //         {
-    //             if (hit.collider.GetComponent<SimonsPushables>().canMove == false) 
-    //             {
-    //                 transform.position = currentPos;
-    //                 _isMoving = false;
-    //                 Debug.Log("Can't move in that direction");
-    //             }
-    //         }
-    //     }
-    //     if (Physics.Raycast(transform.position, bck, out hit, rayLenght))
-    //     {
-    //         if (hit.collider.gameObject.tag == "Pushable")
-    //         {
-    //             if (hit.collider.GetComponent<SimonsPushables>().canMove == false)
-    //             {
-    //                 transform.position = currentPos;
-    //                 _isMoving = false;
-    //                 Debug.Log("Can't move in that direction");
-    //             }
-    //         }
-    //     }
-    //     if (Physics.Raycast(transform.position, lft, out hit, rayLenght))
-    //     {
-    //         if (hit.collider.gameObject.tag == "Pushable")
-    //         {
-    //             if (hit.collider.GetComponent<SimonsPushables>().canMove == false)
-    //             {
-    //                 transform.position = currentPos;
-    //                 _isMoving = false;
-    //                 Debug.Log("Can't move in that direction");
-    //             }
-    //         }
-    //     }
-    //     if (Physics.Raycast(transform.position, rgt, out hit, rayLenght))
-    //     {
-    //         if (hit.collider.gameObject.tag == "Pushable")
-    //         {
-    //             if (hit.collider.GetComponent<SimonsPushables>().canMove == false)
-    //             {
-    //                 transform.position = currentPos;
-    //                 _isMoving = false;
-    //                 Debug.Log("Can't move in that direction");
-    //             }
-    //         }
-    //     }
-     }
-
+    }
 }

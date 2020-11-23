@@ -11,7 +11,7 @@ public class SimonsPushables : MonoBehaviour
     public Vector3 moveDirection; 
     public float moveLength; 
 
-    public bool canMove; 
+    public bool canMove = true; 
 
 
     ////////////////// PUSHABLES ///////////////////////////
@@ -36,9 +36,6 @@ public class SimonsPushables : MonoBehaviour
         //Needs to be ignored by own raycaast
         objectCollider = GetComponent<Collider>(); 
         player = GameObject.FindGameObjectWithTag("Player"); 
-
-        
-        
     }
 
     private void OnTriggerEnter(Collider c)
@@ -60,10 +57,11 @@ public class SimonsPushables : MonoBehaviour
         //Vector between player and pushable
         distance = transform.position - player.transform.position;
         moveDirectionNormalized = distance.normalized;
-        
+
+        #region resetting normal vector
         //Vector should only have one value like (0,0,1)
         //X
-        if(moveDirectionNormalized.x > 0.8f )
+        if (moveDirectionNormalized.x > 0.8f )
         {
             moveDirection.x = 1; 
         }
@@ -106,8 +104,8 @@ public class SimonsPushables : MonoBehaviour
         {
             moveDirection.z = 0; 
         }
-        
-        
+
+        #endregion
         //Debug.Log(moveDirection);
 
         CheckForObstacle(); 
