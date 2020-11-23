@@ -21,11 +21,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 currentPos;
     #endregion
 
-    private void Awake()
-    {
-
-    }
-
     private void Start()
     {
         currentPos = transform.position;
@@ -33,6 +28,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetMouseButtonDown(1))
         {
             SetTargetPosition();
@@ -46,6 +42,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Area out of player movement range");
 
         }
+
     }
 
     private void SetTargetPosition()
@@ -84,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Pushable"))
+        if (other.CompareTag("Pushable"))
         {
             if (other.gameObject.GetComponent<SimonsPushables>().canMove == true)
             {
@@ -97,12 +94,12 @@ public class PlayerController : MonoBehaviour
                 transform.position = currentPos;
             }
         }
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Obstacle")
+        if (collision.gameObject.tag == "Obstacle")
         {
             _isMoving = false;
             transform.position = currentPos;
