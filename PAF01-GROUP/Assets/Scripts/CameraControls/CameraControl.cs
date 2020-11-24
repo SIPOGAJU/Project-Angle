@@ -52,7 +52,9 @@ public class CameraControl : MonoBehaviour
             if(backToPlayerCam <= 0)
             {
                 orbitCam.Priority = 5;
-                transform.up = playerUp.transform.up;
+                
+                if(playerUp != null)
+                    transform.up = playerUp.transform.up;
             }
         }
     }
