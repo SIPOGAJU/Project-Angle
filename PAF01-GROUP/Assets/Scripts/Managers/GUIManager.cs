@@ -7,7 +7,6 @@ public class GUIManager : MonoBehaviour
 {
     public static GUIManager instance; 
 
-
     Goal goal; 
 
     [SerializeField] GameObject gameFininishedObjects; 
@@ -15,8 +14,6 @@ public class GUIManager : MonoBehaviour
     [SerializeField] GameObject collectibleCounter1; 
     [SerializeField] GameObject collectibleCounter2; 
     [SerializeField] GameObject collectibleCounter3; 
-
-    public int GUIcurrentCollectibles = 0;  
 
     void Awake()
     {
@@ -36,7 +33,7 @@ public class GUIManager : MonoBehaviour
 
     void Update()
     {
-        
+        SetCollectibleGUI(); 
     } 
 
 
@@ -64,18 +61,18 @@ public class GUIManager : MonoBehaviour
 
     public void SetCollectibleGUI()
     {
-        int currentCollectibles = gameManager.instance.currentCollectibles; 
+        int myCurrentCollectibles =  gameManager.instance.currentCollectibles; 
 
         
-        if(currentCollectibles == 1)
+        if(myCurrentCollectibles == 1)
         {
             collectibleCounter1.SetActive(true); 
         }
-        if(currentCollectibles == 2)
+        if(myCurrentCollectibles == 2)
         {
             collectibleCounter2.SetActive(true);
         }
-        if(currentCollectibles == 3)
+        if(myCurrentCollectibles == 3)
         {
             collectibleCounter3.SetActive(true);
         }

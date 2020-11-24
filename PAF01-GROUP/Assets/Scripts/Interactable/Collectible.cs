@@ -5,14 +5,16 @@ using System;
 
 public class Collectible : MonoBehaviour
 {
-    
+    public event Action OnCollected; 
+
     private void OnTriggerEnter(Collider c)
     {
         if(c.CompareTag("Player"))
         {
             
-            gameManager.instance.SetCollectibleAmount(); 
-            
+            if(OnCollected != null)
+                OnCollected(); 
+                //Gets Called in gameManager
 
             Destroy(this.gameObject); 
         }

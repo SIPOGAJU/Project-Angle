@@ -8,12 +8,12 @@ public class gameManager : MonoBehaviour
     public static gameManager instance; 
 
     [Header("GameObjects")]
-    
+    Collectible collectible; 
     PlayerController player; 
 
     [Header("Variables")]
 
-    [SerializeField] int maxCollectibles = 3; 
+    [SerializeField] int maxCollectibles = 1; 
     public int currentCollectibles;  
 
 
@@ -38,6 +38,10 @@ public class gameManager : MonoBehaviour
 
     public void Start()
     {
+        collectible = FindObjectOfType<Collectible>(); 
+        collectible.OnCollected += SetCollectibleAmount; 
+
+        
 
         player = FindObjectOfType<PlayerController>(); 
         currentCollectibles = 0; 
@@ -54,8 +58,6 @@ public class gameManager : MonoBehaviour
     public void SetCollectibleAmount()
     {
         currentCollectibles++; 
-        GUIManager.instance.SetCollectibleGUI(); 
-
         if(maxCollectibles <= currentCollectibles)
         {
             Debug.Log("All Collectibles have been collected"); 
