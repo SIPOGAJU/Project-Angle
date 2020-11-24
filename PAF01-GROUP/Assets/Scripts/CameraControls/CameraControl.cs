@@ -27,9 +27,8 @@ public class CameraControl : MonoBehaviour
     {
         float sideRotation = Input.GetAxisRaw("Horizontal") * rotationSpeed;
         float upRotation = Input.GetAxisRaw("Vertical") * rotationSpeed;
-
-        Debug.Log(sideRotation);
-
+        
+        
         if (sideRotation != 0 && upRotation == 0)
         {
             transform.Rotate(0f, 0f, -sideRotation);
