@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 414213510}
   m_Layer: 0
   m_Name: Patrol
-  m_TagString: Untagged
+  m_TagString: Patrol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,6 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 0}
   - {fileID: 0}
-  playerDeath: {fileID: 2868500212977016776, guid: 1b0a75543041680418257b9a21c5af18, type: 3}
 --- !u!54 &414213510
 Rigidbody:
   m_ObjectHideFlags: 0
