@@ -35,4 +35,12 @@ public class PatrolController : MonoBehaviour
         else if (currentPoint >= wayPoints.Length - 1)
             currentPoint -= 1;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Pushable")
+        {
+            FindObjectOfType<PlayerController>().OnPlayerTargetSet -= OnPlayerMove;
+        }
+    }
 }

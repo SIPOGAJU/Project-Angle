@@ -10,12 +10,14 @@ public class TrackingPlayerUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.up = playerTransform.up;
+        if(playerTransform != null)
+            transform.up = playerTransform.up;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.up = Vector3.Lerp(transform.up, playerTransform.up, Time.deltaTime * rotationSpeed);
+        if (playerTransform != null)
+            transform.up = Vector3.Lerp(transform.up, playerTransform.up, Time.deltaTime * rotationSpeed);
     }
 }

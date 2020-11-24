@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float movementRange = 0f;
 
     public LayerMask whatIsClickable;
+    public ParticleSystem playerDeath;
 
     [HideInInspector]
     public Vector3 _targetPos;
@@ -79,6 +80,12 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, movementRange);
     }
 
+    void OnDeath()
+    {
+        Destroy(gameObject);
+        Instantiate(playerDeath, transform.position, transform.rotation);
+        Debug.Log("You have been eliminated for goloso!");
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Pushable"))
@@ -103,6 +110,11 @@ public class PlayerController : MonoBehaviour
         {
             _isMoving = false;
             transform.position = currentPos;
+        }
+
+        if(collision.gameObject.tag == "Patrol")
+        {
+            OnDeath();
         }
     }
 }
