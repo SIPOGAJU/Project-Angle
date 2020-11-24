@@ -7,6 +7,7 @@ public class CameraControl : MonoBehaviour
 {
     public CinemachineVirtualCamera playerCam;
     public CinemachineVirtualCamera orbitCam;
+    public Transform playerUp;
     
     [SerializeField] float rotationSpeed = 1f;
     [SerializeField] float waitTime = 2f;
@@ -17,7 +18,7 @@ public class CameraControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        originalUp = transform.up;
+        
     }
 
 
@@ -31,7 +32,7 @@ public class CameraControl : MonoBehaviour
 
         if (sideRotation != 0 && upRotation == 0)
         {
-            transform.Rotate(0f, -sideRotation, 0f);
+            transform.Rotate(0f, 0f, -sideRotation);
             orbitCam.Priority = 11;
             backToPlayerCam = waitTime;
         }
@@ -39,6 +40,7 @@ public class CameraControl : MonoBehaviour
         else if(upRotation != 0 && sideRotation == 0)
         {
             transform.Rotate(upRotation, 0f, 0f);
+            Debug.Log(upRotation);
             orbitCam.Priority = 11;
             backToPlayerCam = waitTime;
         }
@@ -50,7 +52,7 @@ public class CameraControl : MonoBehaviour
             if(backToPlayerCam <= 0)
             {
                 orbitCam.Priority = 5;
-                transform.up = originalUp;
+                transform.up = playerUp.transform.up;
             }
         }
     }
