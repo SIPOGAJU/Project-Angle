@@ -5,19 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/4by4Template 1.unity
-    guid: 381e95a76349aae4e991b83bddd75324
-  - enabled: 1
-    path: Assets/Scenes/Level01.unity
-    guid: 6a686acbf7e5d864691325f1b44cac57
   - enabled: 1
     path: Assets/Scenes/Showcase01.unity
     guid: ade836f144d2b114d980082a70318229
   - enabled: 1
-    path: Assets/Scenes/Button_Door_Test.unity
-    guid: 516b759abd18ae04a80bf17c6a00e9d1
+    path: Assets/Scenes/Showcase 02.unity
+    guid: 1bf5af5efe054044996f53f8000b7732
   m_configObjects: {}
