@@ -10,6 +10,8 @@ public class CameraBasedPos : MonoBehaviour
     public float speed;
     int currentWayPoint;
 
+    public bool xRotation;
+    public bool zRotation;
 
     private void Start()
     {
@@ -17,9 +19,20 @@ public class CameraBasedPos : MonoBehaviour
     }
     void Update()
     {
-        if (Mathf.Abs(cam.transform.rotation.eulerAngles.x - angleToTrack) <= 2f)
+        if(xRotation == true)
         {
-            currentWayPoint = 1;
+            if (Mathf.Abs(cam.transform.rotation.eulerAngles.x - angleToTrack) <= 2f)
+            {
+                currentWayPoint = 1;
+            }
+        }
+
+        if(zRotation == true)
+        {
+            if (Mathf.Abs(cam.transform.rotation.eulerAngles.z - angleToTrack) <= 2f)
+            {
+                currentWayPoint = 1;
+            }
         }
 
         transform.position = Vector3.MoveTowards(transform.position, wayPoints[currentWayPoint].position, speed * Time.deltaTime);

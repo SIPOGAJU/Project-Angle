@@ -55,8 +55,8 @@ public class Teleporter : MonoBehaviour
 
     IEnumerator SettingTrigger()
     {
-        this.gameObject.GetComponent<MeshCollider>().isTrigger = false;
+        this.gameObject.GetComponent<BoxCollider>().isTrigger = false;
         yield return new WaitForSeconds(2);
-        this.gameObject.GetComponent<MeshCollider>().isTrigger = true;
+        this.gameObject.GetComponent<BoxCollider>().isTrigger = true;
     }
 }

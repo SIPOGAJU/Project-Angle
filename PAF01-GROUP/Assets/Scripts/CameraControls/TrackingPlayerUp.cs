@@ -11,7 +11,7 @@ public class TrackingPlayerUp : MonoBehaviour
     void Start()
     {
         if(playerTransform != null)
-            transform.up = playerTransform.up;
+            transform.rotation = playerTransform.rotation;
     }
 
     // Update is called once per frame
