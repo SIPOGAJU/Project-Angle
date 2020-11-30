@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100, whatIsClickable.value))
         {
             currentPos = transform.position;
-            _targetPos = hit.transform.position + (transform.up * 0.5f);
+            _targetPos = hit.transform.position + (transform.up * .5f);
             _isMoving = true;
 
             if (Vector3.Distance(transform.position, _targetPos) <= movementRange && Vector3.Distance(transform.position, _targetPos) >= 1.5f)
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, movementRange);
+        Gizmos.DrawWireSphere(transform.localPosition, movementRange);
     }
 
     void OnDeath()

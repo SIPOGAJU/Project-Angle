@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    [SerializeField] Vector3 doorTargetPos; 
+    public Vector3 doorTargetPos; 
     Vector3 doorStartPosition; 
-    [SerializeField] GameObject door; 
+    public GameObject door; 
 
     bool doorIsOpen = false; 
 

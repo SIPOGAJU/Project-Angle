@@ -9,10 +9,10 @@ public class GUIManager : MonoBehaviour
 
     Goal goal; 
 
-    [SerializeField] GameObject gameFininishedObjects; 
-    [SerializeField] GameObject collectibleCounter1; 
-    [SerializeField] GameObject collectibleCounter2; 
-    [SerializeField] GameObject collectibleCounter3; 
+    public GameObject gameFininishedObjects; 
+    public GameObject collectibleCounter1; 
+    public GameObject collectibleCounter2; 
+    public GameObject collectibleCounter3; 
 
     void Awake()
     {

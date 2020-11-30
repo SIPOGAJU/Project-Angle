@@ -17,7 +17,7 @@ public class CameraBasedPos : MonoBehaviour
     }
     void Update()
     {
-        if (Mathf.Abs(cam.transform.rotation.eulerAngles.x - 90) <= 1f)
+        if (Mathf.Abs(cam.transform.rotation.eulerAngles.x - angleToTrack) <= 2f)
         {
             currentWayPoint = 1;
         }

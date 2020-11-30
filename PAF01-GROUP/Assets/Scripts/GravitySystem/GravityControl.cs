@@ -34,12 +34,12 @@ public class GravityControl : MonoBehaviour
 
             //Quaternion targetRotation = Quaternion.FromToRotation(localUp, gravityUp) * transform.rotation;
 
-            transform.up = Vector3.Lerp(transform.up, gravityUp, rotationSpeed * Time.deltaTime);
+            transform.up = gravityUp;
+            //transform.up = Vector3.Lerp(transform.up, gravityUp, rotationSpeed * Time.deltaTime);
 
             // push down for gravity
 
             rigidbody.AddForce((-gravityUp * Gravity.gravityIntensity) * rigidbody.mass);
-
         }
     }
 }
