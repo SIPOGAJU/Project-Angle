@@ -42,7 +42,7 @@ public class SimonsPushables : MonoBehaviour
     {
         if(c.CompareTag("Player"))
         {
-            PlayerDirectionCheck(); 
+            PlayerDirectionCheck();
         }
     }
 
@@ -116,13 +116,13 @@ public class SimonsPushables : MonoBehaviour
         
         RaycastHit hit;
         
-        if(Physics.Raycast(transform.position, moveDirection, out hit, 3))
+        if(Physics.Raycast(transform.position, moveDirection, out hit, 1))
         {
             canMove = false;
             Debug.Log("Do Not Move Player!"); 
 
         }
-        if(!Physics.Raycast(transform.position, moveDirection, out hit, 3))
+        if(!Physics.Raycast(transform.position, moveDirection, out hit, 1))
         {
             canMove = true; 
             Debug.Log("Can Move"); 
