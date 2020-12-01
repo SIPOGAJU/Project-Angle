@@ -4024,7 +4024,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1768
+  m_Name: pb_Mesh-3000
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9470,8 +9470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef15c38c38f70c644b708e1628451ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityIntensity: 60
-  fixedDirection: 1
 --- !u!64 &944182482
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12242,7 +12240,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1400641933892699728, guid: eaa35a7332a6bda4c94a140fd904adde, type: 3}
       propertyPath: isWalkable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1400641933892699729, guid: eaa35a7332a6bda4c94a140fd904adde, type: 3}
       propertyPath: m_Mesh
@@ -12617,8 +12615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef15c38c38f70c644b708e1628451ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityIntensity: 60
-  fixedDirection: 1
 --- !u!64 &1281013532
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16566,8 +16562,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef15c38c38f70c644b708e1628451ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityIntensity: 60
-  fixedDirection: 1
 --- !u!64 &1739739196
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17631,8 +17625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef15c38c38f70c644b708e1628451ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityIntensity: 60
-  fixedDirection: 1
 --- !u!64 &1815982740
 MeshCollider:
   m_ObjectHideFlags: 0
