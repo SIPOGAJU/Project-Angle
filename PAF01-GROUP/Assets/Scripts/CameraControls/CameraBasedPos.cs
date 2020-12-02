@@ -25,6 +25,10 @@ public class CameraBasedPos : MonoBehaviour
             {
                 currentWayPoint = 1;
             }
+            else
+            {
+                currentWayPoint = 0;
+            }
         }
 
         if(zRotation == true)
@@ -32,6 +36,10 @@ public class CameraBasedPos : MonoBehaviour
             if (Mathf.Abs(cam.transform.rotation.eulerAngles.z - angleToTrack) <= 2f)
             {
                 currentWayPoint = 1;
+            }
+            else
+            {
+                currentWayPoint = 0;
             }
         }
 
