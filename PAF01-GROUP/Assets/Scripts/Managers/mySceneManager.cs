@@ -8,9 +8,9 @@ public class mySceneManager : MonoBehaviour
     public static mySceneManager instance;
     //mySceneManager is name of Script and SceneManager is Class from Unity; 
 
-    [Header("Levels")]
-    public Scene Level01; 
-    public Scene Level02; 
+
+
+    
 
     void Awake()
     {
@@ -20,6 +20,9 @@ public class mySceneManager : MonoBehaviour
         else { 
             Destroy(this.gameObject); 
         }
+
+
+        
     }
 
     // Update is called once per frame
@@ -40,6 +43,14 @@ public class mySceneManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         gameManager.instance.GameState = gameManager.GAME_STATE.gameRunning;
     }
+
+    public void LoadSceneByIndex(int index)
+    {
+        SceneManager.LoadScene(index); 
+        gameManager.instance.GameState = gameManager.GAME_STATE.gameRunning;
+
+    }
+
     public void LoadPreviousScene()
     {
         if(SceneManager.GetActiveScene().buildIndex == 0)
@@ -49,4 +60,9 @@ public class mySceneManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
         gameManager.instance.GameState = gameManager.GAME_STATE.gameRunning;
     }
+
+   
+
+    
+
 }

@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleporter : MonoBehaviour
+public class TouchTeleporter : MonoBehaviour
 {
     public Transform exit1;
     public Transform exit2;
-    //public TouchPlayerController player;
-    public PlayerController player; 
+    public TouchPlayerController player;
 
     public bool wasVisited;
 

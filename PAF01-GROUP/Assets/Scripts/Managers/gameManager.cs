@@ -14,6 +14,7 @@ public class gameManager : MonoBehaviour
 
     [SerializeField] int maxCollectibles = 1; 
     public int currentCollectibles;  
+    bool gotAllCollectibles; 
 
 
     public enum GAME_STATE
@@ -27,10 +28,12 @@ public class gameManager : MonoBehaviour
 
     private void Awake() 
     {
-        if(instance == null) {
+        if(instance == null) 
+        {
             instance = this; 
         }
-        else { 
+        else
+        { 
             Destroy(this.gameObject); 
         }
     }
@@ -38,7 +41,7 @@ public class gameManager : MonoBehaviour
     public void Start()
     {
         
-        player = FindObjectOfType<PlayerController>(); 
+        //player = FindObjectOfType<TouchPlayerController>(); 
         currentCollectibles = 0; 
 
         GameState = GAME_STATE.gameRunning; 
@@ -46,7 +49,14 @@ public class gameManager : MonoBehaviour
 
     public void Update() 
     {
-
+        if(maxCollectibles <= currentCollectibles)
+        {
+            gotAllCollectibles = true; 
+        }
+        if(gotAllCollectibles)
+        {
+            //Assign Score? 
+        }
         
     }
 
@@ -56,10 +66,7 @@ public class gameManager : MonoBehaviour
         currentCollectibles++; 
         GUIManager.instance.SetCollectibleGUI(); 
 
-        if(maxCollectibles <= currentCollectibles)
-        {
-            Debug.Log("All Collectibles have been collected"); 
-        }
+        
             
     }
 
@@ -74,6 +81,8 @@ public class gameManager : MonoBehaviour
 
     public void QuitApplication()
     {
+        //Does this work on Mobile? 
+        //Could go back to Main Menu Screen instead
         Application.Quit(); 
     }
 }
