@@ -162,7 +162,13 @@ public class PathController : MonoBehaviour
             }
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Pushable"))
+        {
+            DOTween.Kill(gameObject.transform);
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;

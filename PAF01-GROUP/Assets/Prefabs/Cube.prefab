@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1400641933892699742}
   - component: {fileID: 1400641933892699743}
   - component: {fileID: 1400641933892699740}
-  - component: {fileID: 1270186934}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -314,23 +313,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &1270186934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400641933892699738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38b82a20bcada3a429ce51de6efb3856, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  possiblePaths:
-  - target: {fileID: 0}
-    active: 1
-  previousBlock: {fileID: 0}
-  isStair: 0
-  movingGround: 0
-  walkPointOffset: 0.5
-  stairOffset: 0.4
