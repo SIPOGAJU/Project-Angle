@@ -33,6 +33,15 @@ public class PathController : MonoBehaviour
 
         //GET CURRENT CUBE (UNDER PLAYER)
         RayCastDown();
+
+        if (currentCube.GetComponent<Walkable>().movingGround)
+        {
+            transform.parent = currentCube.transform;
+        }
+        else
+        {
+            transform.parent = null;
+        }
         // CLICK ON CUBE
 
         if (Input.GetButtonDown("Fire1"))
@@ -160,13 +169,6 @@ public class PathController : MonoBehaviour
             {
                 currentCube = playerHit.transform;
             }
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Pushable"))
-        {
-            DOTween.Kill(gameObject.transform);
         }
     }
     private void OnDrawGizmos()
