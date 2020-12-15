@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: cba5a3378938e74429a72fbe1880683e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TouchScene.unity
     guid: d052b0197eb417b4c8c5fb5518e2b90a
   m_configObjects: {}

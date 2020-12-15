@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1400641933892699742}
   - component: {fileID: 1400641933892699743}
   - component: {fileID: 1400641933892699740}
-  - component: {fileID: 1400641933892699728}
+  - component: {fileID: 1270186934}
   m_Layer: 0
-  m_Name: Cube (10)
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400641933892699738}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 1.5, z: -4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -314,7 +314,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &1400641933892699728
+--- !u!114 &1270186934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,8 +323,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1400641933892699738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0eb818b504f90045a2df60e404b1ca5, type: 3}
+  m_Script: {fileID: 11500000, guid: 38b82a20bcada3a429ce51de6efb3856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPrefab: {fileID: 119494325298890601, guid: 0eb12dfc15d395340a329fd92e927ae3, type: 3}
-  isWalkable: 1
+  possiblePaths:
+  - target: {fileID: 0}
+    active: 1
+  previousBlock: {fileID: 0}
+  isStair: 0
+  movingGround: 0
+  walkPointOffset: 0.5
+  stairOffset: 0.4
