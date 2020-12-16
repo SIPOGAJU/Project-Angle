@@ -12,7 +12,7 @@ public class PathController : MonoBehaviour
 
     public Transform currentCube;
     public Transform clickedCube;
-    //public Transform indicator;
+    public Transform indicator;
 
     [Space]
 
@@ -57,12 +57,12 @@ public class PathController : MonoBehaviour
                     finalPath.Clear();
                     FindPath();
 
-                    //indicator.position = mouseHit.transform.GetComponent<Walkable>().GetWalkPoint();
-                    //Sequence s = DOTween.Sequence();
+                    indicator.position = mouseHit.transform.GetComponent<Walkable>().GetWalkPoint();
+                    Sequence s = DOTween.Sequence();
                     //s.AppendCallback(() => indicator.GetComponentInChildren<ParticleSystem>().Play());
-                    //s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.white, .1f));
-                    //s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.black, .3f).SetDelay(.2f));
-                    //s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.clear, .3f));
+                    s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.white, .1f));
+                    s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.black, .3f).SetDelay(.2f));
+                    s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.clear, .3f));
                 }
             }
         }
