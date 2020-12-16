@@ -171,6 +171,18 @@ public class PathController : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Pushable"))
+        {
+            if (other.gameObject.GetComponent<SimonsPushables>().canMove == false)
+            {
+                Debug.Log("You can not longer continue");
+                DOTween.KillAll();
+            }
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
