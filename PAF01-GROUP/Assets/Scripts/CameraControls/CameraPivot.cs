@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrackingPlayerUp : MonoBehaviour
+public class CameraPivot : MonoBehaviour
 {
     public Transform playerTransform;
-    [SerializeField] float rotationSpeed = 2f; 
+    [SerializeField] float rotationSpeed = 2f;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(playerTransform != null)
+        if (playerTransform != null)
             transform.rotation = playerTransform.rotation;
     }
 

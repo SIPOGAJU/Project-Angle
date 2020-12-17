@@ -950,7 +950,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18452
+  m_Name: pb_Mesh18466
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5068,6 +5068,7 @@ GameObject:
   - component: {fileID: 192671537}
   - component: {fileID: 192671542}
   - component: {fileID: 192671543}
+  - component: {fileID: 192671544}
   m_Layer: 0
   m_Name: MovingCube
   m_TagString: Untagged
@@ -5086,7 +5087,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1832358912}
 --- !u!33 &192671538
@@ -5376,7 +5377,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192671536}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8c25931e8f7e684db148801116ccfa4, type: 3}
   m_Name: 
@@ -5403,12 +5404,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possiblePaths:
   - target: {fileID: 1448532595}
-    active: 1
+    active: 0
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 1
   walkPointOffset: 0.5
   stairOffset: 0.4
+--- !u!114 &192671544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192671536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1502eb3cbbc4bd34795091c9095ed7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1462387136}
+  - {fileID: 1216944559}
+  moveSpeed: 10
 --- !u!43 &195735610
 Mesh:
   m_ObjectHideFlags: 0
@@ -18768,7 +18785,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1060757588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22200c0a69e33f4a9a4411937dc3ad8, type: 3}
+  m_Script: {fileID: 11500000, guid: a291b93a3f9b9eb47b026de81aa380d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1759714271}
@@ -20671,7 +20688,7 @@ Transform:
   m_GameObject: {fileID: 1298565231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.7614276, y: 10.422233, z: 11.619302}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13

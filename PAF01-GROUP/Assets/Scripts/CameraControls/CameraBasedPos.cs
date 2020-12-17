@@ -19,11 +19,13 @@ public class CameraBasedPos : MonoBehaviour
     }
     void Update()
     {
-        if(xRotation == true)
+        if (xRotation == true)
         {
             if (Mathf.Abs(cam.transform.rotation.eulerAngles.x - angleToTrack) <= 2f)
             {
                 currentWayPoint = 1;
+                if(gameObject.GetComponent<Walkable>() != null)
+                    gameObject.GetComponent<Walkable>().possiblePaths[0].active = true;
             }
             else
             {
@@ -31,7 +33,7 @@ public class CameraBasedPos : MonoBehaviour
             }
         }
 
-        if(zRotation == true)
+        if (zRotation == true)
         {
             if (Mathf.Abs(cam.transform.rotation.eulerAngles.z - angleToTrack) <= 2f)
             {
