@@ -230,9 +230,9 @@ Transform:
   - {fileID: 1812144399}
   - {fileID: 1847030917}
   - {fileID: 1779438706}
+  - {fileID: 1466619531}
   - {fileID: 2007317510}
   - {fileID: 1765570671}
-  - {fileID: 1466619531}
   - {fileID: 2033845185}
   - {fileID: 1240709066}
   - {fileID: 1582709884}
@@ -11673,7 +11673,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b82a20bcada3a429ce51de6efb3856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possiblePaths: []
+  possiblePaths:
+  - target: {fileID: 1337599011}
+    active: 1
+  - target: {fileID: 1847030917}
+    active: 1
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
@@ -24639,8 +24643,9 @@ GameObject:
   - component: {fileID: 1466619529}
   - component: {fileID: 1466619528}
   - component: {fileID: 1466619527}
+  - component: {fileID: 1466619532}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: c7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24937,8 +24942,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 54714223}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1466619532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466619526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b82a20bcada3a429ce51de6efb3856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possiblePaths: []
+  previousBlock: {fileID: 0}
+  isStair: 0
+  movingGround: 0
+  walkPointOffset: 0.5
+  stairOffset: 0.4
 --- !u!1 &1481537949
 GameObject:
   m_ObjectHideFlags: 0
@@ -25315,7 +25338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6223678584524462225, guid: 653c54764dd682a43aa4f1eb08793c93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6223678584524462225, guid: 653c54764dd682a43aa4f1eb08793c93, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29127,7 +29150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759714266}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 2.5, z: -3.5}
+  m_LocalPosition: {x: -1.5, y: 2.5, z: -4.5}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children: []
   m_Father: {fileID: 0}
@@ -29479,7 +29502,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 54714223}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1779438701
 GameObject:
@@ -29807,7 +29830,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b82a20bcada3a429ce51de6efb3856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possiblePaths: []
+  possiblePaths:
+  - target: {fileID: 1847030917}
+    active: 1
+  - target: {fileID: 1466619531}
+    active: 1
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
@@ -30303,7 +30330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b82a20bcada3a429ce51de6efb3856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possiblePaths: []
+  possiblePaths:
+  - target: {fileID: 1337599011}
+    active: 1
+  - target: {fileID: 1847030917}
+    active: 1
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
@@ -31112,7 +31143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b82a20bcada3a429ce51de6efb3856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possiblePaths: []
+  possiblePaths:
+  - target: {fileID: 677190212}
+    active: 1
+  - target: {fileID: 1812144399}
+    active: 1
+  - target: {fileID: 1779438706}
+    active: 1
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
@@ -31990,7 +32027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2040558037487816147, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2040558037487816147, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33926,7 +33963,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 54714223}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2007477525
 GameObject:
