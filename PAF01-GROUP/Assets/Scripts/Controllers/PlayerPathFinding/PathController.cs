@@ -61,7 +61,7 @@ public class PathController : MonoBehaviour
                     Sequence s = DOTween.Sequence();
                     //s.AppendCallback(() => indicator.GetComponentInChildren<ParticleSystem>().Play());
                     s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.white, .1f));
-                    s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.black, .3f).SetDelay(.2f));
+                    s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.grey, .3f).SetDelay(.2f));
                     s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.clear, .3f));
                 }
             }
