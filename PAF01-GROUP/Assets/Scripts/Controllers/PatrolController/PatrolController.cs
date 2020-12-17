@@ -12,7 +12,7 @@ public class PatrolController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<PlayerController>().OnPlayerTargetSet += OnPlayerMove;
+       // FindObjectOfType<PathController>().OnPlayerTargetSet += OnPlayerMove;
 
         transform.position = wayPoints[currentPoint].position;
         foreach (var item in wayPoints)
@@ -40,7 +40,7 @@ public class PatrolController : MonoBehaviour
     {
         if(other.gameObject.tag == "Pushable")
         {
-            FindObjectOfType<PlayerController>().OnPlayerTargetSet -= OnPlayerMove;
+            //FindObjectOfType<PathController>().OnPlayerTargetSet -= OnPlayerMove;
         }
     }
 }

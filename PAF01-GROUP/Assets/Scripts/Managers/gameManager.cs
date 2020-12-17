@@ -8,7 +8,7 @@ public class gameManager : MonoBehaviour
     public static gameManager instance; 
 
     [Header("GameObjects")]
-    PlayerController player; 
+    PathController player; 
 
     [Header("Variables")]
 

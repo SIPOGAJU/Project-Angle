@@ -53,7 +53,7 @@ public class PathController : MonoBehaviour
                 if (mouseHit.transform.GetComponent<Walkable>() != null)
                 {
                     clickedCube = mouseHit.transform;
-                    DOTween.Kill(gameObject.transform);
+                    DOTween.KillAll();
                     finalPath.Clear();
                     FindPath();
 
@@ -127,7 +127,6 @@ public class PathController : MonoBehaviour
             else
                 return;
         }
-
         finalPath.Insert(0, clickedCube);
         FollowPath();
     }
