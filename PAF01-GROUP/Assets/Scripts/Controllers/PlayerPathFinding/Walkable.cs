@@ -7,7 +7,7 @@ public class Walkable : MonoBehaviour
     public List<WalkPath> possiblePaths = new List<WalkPath>();
 
     [Space]
-
+    [HideInInspector]
     public Transform previousBlock;
 
     [Space]
