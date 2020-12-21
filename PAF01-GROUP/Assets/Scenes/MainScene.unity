@@ -30431,7 +30431,7 @@ MonoBehaviour:
   clickedCube: {fileID: 0}
   indicator: {fileID: 1298565235}
   finalPath: []
-  easType: 8
+  easType: 1
   moveDelay: 0.4
   stepCount: 0
 --- !u!54 &1759714273
