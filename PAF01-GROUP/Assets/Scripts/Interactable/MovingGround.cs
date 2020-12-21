@@ -24,7 +24,10 @@ public class MovingGround : MonoBehaviour
             currentWaypoint = 1;
             if(gameObject.GetComponent<Walkable>() != null)
             {
-                gameObject.GetComponent<Walkable>().possiblePaths[0].active = true;
+                foreach (var path in gameObject.GetComponent<Walkable>().possiblePaths)
+                {
+                    path.active = true;
+                }
             }
         }
         
