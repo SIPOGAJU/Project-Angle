@@ -30,7 +30,10 @@ public class GUIManager : MonoBehaviour
     void Start()
     {
         goal = FindObjectOfType<Goal>(); 
-        goal.GoalCollected += LoadGameFinishedGUI; 
+        if(goal != null)
+        {
+            goal.GoalCollected += LoadGameFinishedGUI;
+        }
     }
 
     void Update()

@@ -7,7 +7,6 @@ using System.Linq;
 public class PathController : MonoBehaviour
 {
     public bool walking = false;
-
     [Space]
 
     public Transform currentCube;
@@ -22,9 +21,15 @@ public class PathController : MonoBehaviour
 
     public Ease easType;
     public float moveDelay;
+    
+    [Space]
+    private AudioManager audioManager;
+    //public event System.Action OnPlayerStep;
+    public int stepCount;
 
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         RayCastDown();
     }
 
@@ -140,8 +145,10 @@ public class PathController : MonoBehaviour
         for (int i = finalPath.Count - 1; i > 0; i--)
         {
             float time = finalPath[i].GetComponent<Walkable>().isStair ? 1.5f : 1;
-
-            s.Append(transform.DOMove(finalPath[i].GetComponent<Walkable>().GetWalkPoint() + transform.up / 2f, moveDelay * time).SetEase(easType));
+            s.Append(transform.DOMove(finalPath[i].GetComponent<Walkable>().GetWalkPoint() + transform.up / 2f, moveDelay * time)
+                .SetEase(easType)
+                .OnComplete(()=>StepMove())
+                .SetDelay(.2f));
         }
         s.AppendCallback(() => Clear());
     }
@@ -181,6 +188,14 @@ public class PathController : MonoBehaviour
                 DOTween.KillAll();
             }
         }
+    }
+
+    void StepMove()
+    {
+        stepCount++;
+        audioManager.Play("Walk");
+        //if (OnPlayerStep != null)
+        //    OnPlayerStep();
     }
     private void OnDrawGizmos()
     {
