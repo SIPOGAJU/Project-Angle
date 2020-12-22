@@ -14,7 +14,7 @@ public class PathController : MonoBehaviour
     public Transform indicator;
 
     [Space]
-
+    public LayerMask layerMask;
     public List<Transform> finalPath = new List<Transform>();
 
     [Space]
@@ -53,7 +53,7 @@ public class PathController : MonoBehaviour
         {
             Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition); RaycastHit mouseHit;
 
-            if (Physics.Raycast(mouseRay, out mouseHit))
+            if (Physics.Raycast(mouseRay, out mouseHit, 100f,layerMask, QueryTriggerInteraction.Ignore))
             {
                 if (mouseHit.transform.GetComponent<Walkable>() != null)
                 {

@@ -22,6 +22,13 @@ public class Walkable : MonoBehaviour
     public float walkPointOffset = .5f;
     public float stairOffset = .4f;
 
+    [Space]
+    public bool hasPushableOnTop;
+    private void Update()
+    {
+        RayCastUp();
+    }
+
     public Vector3 GetWalkPoint()
     {
         float stair = isStair ? stairOffset : 0;
@@ -43,6 +50,35 @@ public class Walkable : MonoBehaviour
                 return;
             Gizmos.color = p.active ? Color.black : Color.clear;
             Gizmos.DrawLine(GetWalkPoint(), p.target.GetComponent<Walkable>().GetWalkPoint());
+        }
+
+        Gizmos.color = Color.blue;
+        Ray ray = new Ray(transform.position, transform.up);
+        Gizmos.DrawRay(ray);
+    }
+    
+    private void RayCastUp()
+    {
+        RaycastHit hit;
+
+        if(Physics.Raycast(transform.position, transform.up, out hit))
+        {
+            if (hit.collider.CompareTag("Pushable"))
+            {
+                hasPushableOnTop = true;
+                foreach (var path in possiblePaths)
+                {
+                    path.active = false;
+                }
+            }
+            else if(!hit.collider.CompareTag("Pushable") && !movingGround)
+            {
+                hasPushableOnTop = false;
+                foreach (var path in possiblePaths)
+                {
+                    path.active = true;
+                }
+            }
         }
     }
 }

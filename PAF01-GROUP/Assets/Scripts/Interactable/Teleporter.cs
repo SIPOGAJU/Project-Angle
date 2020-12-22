@@ -7,7 +7,6 @@ public class Teleporter : MonoBehaviour
 {
     public Transform exit1;
     public Transform exit2;
-    //public TouchPlayerController player;
 
     public bool wasVisited;
 
@@ -21,8 +20,9 @@ public class Teleporter : MonoBehaviour
                 DOTween.KillAll(other.gameObject);
                 other.gameObject.transform.position = exit1.position;
                 other.gameObject.transform.up = exit1.transform.up;
-                //._targetPos = exit1.position;
                 wasVisited = true;
+
+                FindObjectOfType<AudioManager>().Play("CamTrans");
             }
 
             else if(wasVisited == true && exit2 != null)
@@ -31,7 +31,6 @@ public class Teleporter : MonoBehaviour
                 DOTween.KillAll(other.gameObject);
                 other.gameObject.transform.position = exit2.position;
                 other.gameObject.transform.up = exit2.transform.up;
-                //player._targetPos = exit2.position;
                 wasVisited = false;
             }
         }
