@@ -10,6 +10,7 @@ public class CameraPivot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         if (playerTransform != null)
             transform.rotation = playerTransform.rotation;
     }

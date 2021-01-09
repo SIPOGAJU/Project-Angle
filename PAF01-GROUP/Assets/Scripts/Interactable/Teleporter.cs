@@ -30,7 +30,6 @@ public class Teleporter : MonoBehaviour
 
                 DOTween.KillAll(other.gameObject);
                 other.gameObject.transform.position = exit2.position;
-                other.gameObject.transform.up = exit2.transform.up;
                 wasVisited = false;
             }
         }
