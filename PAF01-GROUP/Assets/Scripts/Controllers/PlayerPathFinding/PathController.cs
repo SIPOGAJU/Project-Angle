@@ -120,8 +120,6 @@ public class PathController : MonoBehaviour
             ExploreCube(nextCubes, visitedCubes);
         }
     }
-
-
     void BuildPath()
     {
         Transform cube = clickedCube;
@@ -134,44 +132,20 @@ public class PathController : MonoBehaviour
                 return;
         }
 
-        finalPath.Insert(0, currentCube);
-        //finalPath.Add(currentCube);
+        
         finalPath.Reverse();
+        finalPath.Insert(0, currentCube);
 
-        //Vector3 dir = (clickedCube.GetComponent<Walkable>().GetWalkPoint() + transform.up / 2f - transform.position).normalized;
-        ////Debug.Log("direction normalized: " + dir);
-        //float direction = Vector3.Dot(dir, transform.forward);
-        //Debug.Log("dot products: " + direction);
-        ////Debug.Log(transform.forward);
-
-        ////Sequence s = DOTween.Sequence();
-        ////s.Append(transform.DOLookAt(clickedCube.GetComponent<Walkable>().GetWalkPoint() + transform.up / 2f, .1f))
-        ////   .SetDelay(.2f);
-
-
-        //if(Mathf.Abs(dir.x) >= .95f || Mathf.Abs(dir.y) >= .95f || Mathf.Abs(dir.z) >= .95f)
-        //{
-        //    FollowPath();
-        //}
-        ////if (direction == 0 || Mathf.Abs(direction) >= 0.95f)
-        ////{
-        ////    FollowPath();
-        ////}
-        ///
-        //Debug.Log(IsPathStraight(finalPath));
         if (IsPathStraight(finalPath) == true)
         {
             FollowPath();
         }
-
-        //FollowPath();
     }
 
     void FollowPath()
     {
         Sequence s = DOTween.Sequence();
         walking = true;
-
         //for (int i = finalPath.Count - 1; i > 0; i--)
         //{
         //    float time = finalPath[i].GetComponent<Walkable>().isStair ? 1.5f : 1;
@@ -181,7 +155,7 @@ public class PathController : MonoBehaviour
         //        .SetDelay(.2f));
         //}
 
-        for (int i = 0; i < finalPath.Count - 1; i++)
+        for (int i = 0; i < finalPath.Count; i++)
         {
             float time = finalPath[i].GetComponent<Walkable>().isStair ? 1.5f : 1;
             s.Append(transform.DOMove(finalPath[i].GetComponent<Walkable>().GetWalkPoint() + transform.up / 2f, moveDelay * time)
@@ -196,12 +170,8 @@ public class PathController : MonoBehaviour
 
     bool IsPathStraight(List<Transform> path)
     {
-        //Some of this code assumes flat ground and that nothing too weird geometrically is going on with your path
-        //If your ground is far from just a checkerboard pattern of walkable nodes then we will have to improve this code a little
-        //This code also assumes that the STARTING NODE is part of the path. If not we will have to tweak
-
         //Assuming the starting node is part of the path, a path of length 2 must be straight
-        if (path.Count <= 2) return true;
+        if (path.Count <= 1) return true;
 
         //Get the first direction that we walk in. We will use this to compare the direction for the rest of the nodes
         Vector3 startingDir = path[1].position - path[0].position;
