@@ -1,61 +1,197 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using System.Linq;
 
 public class PlayerController : MonoBehaviour
 {
-    Vector3 targetPos;
-    Vector3 currentPos;
-    private bool isMoving;
-    private Transform currentCube;
+    public bool walking = false;
 
-    private void Start()
+    [Space]
+
+    public Transform currentCube;
+    public Transform clickedCube;
+    public Transform indicator;
+
+    [Space]
+
+    public List<Transform> finalPath = new List<Transform>();
+
+    private float blend;
+    private int targetIndex;
+
+
+    IEnumerator currentRoutine;
+
+    void Start()
     {
         RayCastDown();
-        transform.position = currentCube.GetComponent<Walkable>().GetWalkPoint() + transform.up / 2f;
     }
-    private void Update()
+
+    void Update()
     {
+
+        //GET CURRENT CUBE (UNDER PLAYER)
         RayCastDown();
 
-        if (currentCube.GetComponent<Walkable>().movingGround)
-        {
-            transform.parent = currentCube.transform;
-        }
-        else
-        {
-            transform.parent = null;
-        }
+        // CLICK ON CUBE
 
-        if (Input.GetButtonDown("Fire1"))
+        if (walking != true)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
+            if (Input.GetMouseButtonDown(0))
             {
-                if (hit.transform.GetComponent<Walkable>() != null && hit.transform.up == transform.up)
+                Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition); RaycastHit mouseHit;
+
+                if (Physics.Raycast(mouseRay, out mouseHit))
                 {
-                    targetPos = hit.transform.GetComponent<Walkable>().GetWalkPoint();
-                    Vector3 direction = (transform.position - targetPos).normalized;
-                    Debug.Log(direction);
-                    if(Mathf.Abs(direction.x) > .95f || Mathf.Abs(direction.z) > .95f)
+                    if (mouseHit.transform.GetComponent<Walkable>() != null)
                     {
-                        isMoving = true;
+                        clickedCube = mouseHit.transform;
+                        DOTween.Kill(gameObject.transform);
+                        finalPath.Clear();
+                        FindPath();
+
+                        indicator.position = mouseHit.transform.GetComponent<Walkable>().GetWalkPoint();
+                        Sequence s = DOTween.Sequence();
+                        //s.AppendCallback(() => indicator.GetComponentInChildren<ParticleSystem>().Play());
+                        s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.white, .1f));
+                        s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.black, .3f).SetDelay(.2f));
+                        s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.clear, .3f));
                     }
                 }
             }
         }
+    }
 
-        if (isMoving)
+    void FindPath()
+    {
+        List<Transform> nextCubes = new List<Transform>();
+        List<Transform> pastCubes = new List<Transform>();
+
+        foreach (WalkPath path in currentCube.GetComponent<Walkable>().possiblePaths)
         {
-            Move();
+            if (path.active)
+            {
+                nextCubes.Add(path.target);
+                path.target.GetComponent<Walkable>().previousBlock = currentCube;
+            }
+        }
+
+        pastCubes.Add(currentCube);
+
+        ExploreCube(nextCubes, pastCubes);
+        BuildPath();
+    }
+
+    void ExploreCube(List<Transform> nextCubes, List<Transform> visitedCubes)
+    {
+        Transform current = nextCubes.First();
+        nextCubes.Remove(current);
+
+        if (current == clickedCube)
+        {
+            return;
+        }
+
+        foreach (WalkPath path in current.GetComponent<Walkable>().possiblePaths)
+        {
+            if (!visitedCubes.Contains(path.target) && path.active)
+            {
+                nextCubes.Add(path.target);
+                path.target.GetComponent<Walkable>().previousBlock = current;
+            }
+        }
+
+        visitedCubes.Add(current);
+
+        if (nextCubes.Any())
+        {
+            ExploreCube(nextCubes, visitedCubes);
         }
     }
 
-    private void RayCastDown()
+
+    void BuildPath()
     {
+        Transform cube = clickedCube;
+        while (cube != currentCube)
+        {
+            finalPath.Add(cube);
+            if (cube.GetComponent<Walkable>().previousBlock != null)
+                cube = cube.GetComponent<Walkable>().previousBlock;
+            else
+                return;
+        }
+
+
+        //finalPath.Insert(0, clickedCube);
+        finalPath.Reverse();
+        finalPath.Insert(0, currentCube);
+
+        if (currentRoutine != null)
+        {
+            StopCoroutine(currentRoutine);
+        }
+
+        if(IsPathStraight(finalPath) == true)
+        {
+            currentRoutine = FollowPath();
+            StartCoroutine(currentRoutine);
+        }
+    }
+    IEnumerator FollowPath()
+    {
+        Debug.Log("coroutine started");
+        walking = true;
+        while (true)
+        {
+            if (Vector3.Distance(finalPath[targetIndex].GetComponent<Walkable>().GetWalkPoint() + transform.up / 2f, transform.position) < 0.1f)
+            {
+                targetIndex++;
+                if (targetIndex >= finalPath.Count)
+                {
+                    targetIndex = 0;
+                    Clear();
+                    yield break;
+                }
+            }
+            transform.position = Vector3.MoveTowards(transform.position, finalPath[targetIndex].GetComponent<Walkable>().GetWalkPoint() + transform.up / 2f, 3f * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    bool IsPathStraight(List<Transform> path)
+    {
+        //Assuming the starting node is part of the path, a path of length 2 must be straight
+        if (path.Count <= 1) return true;
+
+        //Get the first direction that we walk in. We will use this to compare the direction for the rest of the nodes
+        Vector3 startingDir = path[1].position - path[0].position;
+
+        //Get the direction to each node from its previous node, then compare it to the direction of our starting position
+        for (int i = 2; i < path.Count; i++)
+        {
+            Vector3 dir = path[i].position - path[i - 1].position;
+            float dotProduct = Mathf.Abs(Vector3.Dot(startingDir, dir));
+            Debug.Log(dotProduct);
+            if (dotProduct < .8f) return false; //This means the path is not straight
+        }
+        return true;
+    }
+    public void Clear()
+    {
+        foreach (Transform t in finalPath)
+        {
+            t.GetComponent<Walkable>().previousBlock = null;
+        }
+        finalPath.Clear();
+        walking = false;
+    }
+
+    public void RayCastDown()
+    {
+
         Ray playerRay = new Ray(transform.position, -transform.up);
         RaycastHit playerHit;
 
@@ -66,16 +202,12 @@ public class PlayerController : MonoBehaviour
                 currentCube = playerHit.transform;
             }
         }
-
     }
 
-    private void Move()
+    private void OnDrawGizmos()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, 10f * Time.deltaTime);
-
-        if (transform.position == targetPos)
-        {
-            isMoving = false;
-        }
+        Gizmos.color = Color.blue;
+        Ray ray = new Ray(transform.position, -transform.up);
+        Gizmos.DrawRay(ray);
     }
 }
