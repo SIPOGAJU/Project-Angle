@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     private float blend;
     private int targetIndex;
 
-
-    IEnumerator currentRoutine;
+    public IEnumerator currentRoutine;
+    public event System.Action OnPlayerClick;
 
     void Start()
     {
@@ -34,6 +34,15 @@ public class PlayerController : MonoBehaviour
 
         //GET CURRENT CUBE (UNDER PLAYER)
         RayCastDown();
+
+        if (currentCube.GetComponent<Walkable>().movingGround)
+        {
+            transform.parent = currentCube.transform;
+        }
+        else
+        {
+            transform.parent = null;
+        }
 
         // CLICK ON CUBE
 
@@ -48,13 +57,14 @@ public class PlayerController : MonoBehaviour
                     if (mouseHit.transform.GetComponent<Walkable>() != null)
                     {
                         clickedCube = mouseHit.transform;
-                        DOTween.Kill(gameObject.transform);
+                        //DOTween.Kill(gameObject.transform);
                         finalPath.Clear();
                         FindPath();
 
                         indicator.position = mouseHit.transform.GetComponent<Walkable>().GetWalkPoint();
+                        indicator.transform.up = mouseHit.transform.up;
                         Sequence s = DOTween.Sequence();
-                        //s.AppendCallback(() => indicator.GetComponentInChildren<ParticleSystem>().Play());
+                        s.AppendCallback(() => indicator.GetComponentInChildren<ParticleSystem>().Play());
                         s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.white, .1f));
                         s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.black, .3f).SetDelay(.2f));
                         s.Append(indicator.GetComponent<Renderer>().material.DOColor(Color.clear, .3f));
@@ -110,8 +120,6 @@ public class PlayerController : MonoBehaviour
             ExploreCube(nextCubes, visitedCubes);
         }
     }
-
-
     void BuildPath()
     {
         Transform cube = clickedCube;
@@ -138,6 +146,7 @@ public class PlayerController : MonoBehaviour
         {
             currentRoutine = FollowPath();
             StartCoroutine(currentRoutine);
+            OnPlayerClicked();
         }
     }
     IEnumerator FollowPath()
@@ -151,7 +160,6 @@ public class PlayerController : MonoBehaviour
                 targetIndex++;
                 if (targetIndex >= finalPath.Count)
                 {
-                    targetIndex = 0;
                     Clear();
                     yield break;
                 }
@@ -181,6 +189,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Clear()
     {
+        targetIndex = 0;
         foreach (Transform t in finalPath)
         {
             t.GetComponent<Walkable>().previousBlock = null;
@@ -204,6 +213,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnPlayerClicked()
+    {
+        if (OnPlayerClick != null)
+            OnPlayerClick();
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
