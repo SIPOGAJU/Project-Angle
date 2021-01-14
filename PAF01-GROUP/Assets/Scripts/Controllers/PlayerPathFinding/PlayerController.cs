@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
 
     public List<Transform> finalPath = new List<Transform>();
 
+    [Space]
+    public LayerMask layerMask;
+
     private int targetIndex;
 
     public IEnumerator currentRoutine;
@@ -51,7 +54,7 @@ public class PlayerController : MonoBehaviour
             {
                 Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition); RaycastHit mouseHit;
 
-                if (Physics.Raycast(mouseRay, out mouseHit))
+                if (Physics.Raycast(mouseRay, out mouseHit, 100f, layerMask, QueryTriggerInteraction.Ignore))
                 {
                     if (mouseHit.transform.GetComponent<Walkable>() != null)
                     {

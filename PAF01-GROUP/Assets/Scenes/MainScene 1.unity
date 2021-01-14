@@ -778,7 +778,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19566
+  m_Name: pb_Mesh18574
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4349,6 +4349,7 @@ GameObject:
   - component: {fileID: 155103550}
   - component: {fileID: 155103549}
   - component: {fileID: 155103548}
+  - component: {fileID: 155103546}
   m_Layer: 0
   m_Name: MovingCube (3)
   m_TagString: Untagged
@@ -4371,6 +4372,25 @@ Transform:
   m_Father: {fileID: 1998446277}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &155103546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155103544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b82a20bcada3a429ce51de6efb3856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possiblePaths: []
+  previousBlock: {fileID: 0}
+  isStair: 0
+  movingGround: 0
+  walkPointOffset: 0.5
+  stairOffset: 0.4
+  hasPushableOnTop: 0
 --- !u!64 &155103548
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23924,7 +23944,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18778
+  m_Name: pb_Mesh17750
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -30403,6 +30423,9 @@ MonoBehaviour:
   clickedCube: {fileID: 0}
   indicator: {fileID: 1298565235}
   finalPath: []
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &1765570666
 GameObject:
   m_ObjectHideFlags: 0
