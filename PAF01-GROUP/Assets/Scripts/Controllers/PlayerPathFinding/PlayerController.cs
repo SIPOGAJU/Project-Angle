@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
 
     public List<Transform> finalPath = new List<Transform>();
 
-    private float blend;
     private int targetIndex;
 
     public IEnumerator currentRoutine;
@@ -56,8 +55,8 @@ public class PlayerController : MonoBehaviour
                 {
                     if (mouseHit.transform.GetComponent<Walkable>() != null)
                     {
+                        Debug.Log("Walkable clicked");
                         clickedCube = mouseHit.transform;
-                        //DOTween.Kill(gameObject.transform);
                         finalPath.Clear();
                         FindPath();
 
@@ -148,10 +147,14 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(currentRoutine);
             OnPlayerClicked();
         }
+        else
+        {
+            Debug.Log("Path isn't straight, can't move there");
+        }
     }
     IEnumerator FollowPath()
     {
-        Debug.Log("coroutine started");
+        //Debug.Log("coroutine started");
         walking = true;
         while (true)
         {

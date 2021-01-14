@@ -6326,7 +6326,7 @@ GameObject:
   - component: {fileID: 192671543}
   - component: {fileID: 192671544}
   m_Layer: 0
-  m_Name: Moving1
+  m_Name: mb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6343,7 +6343,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1832358912}
 --- !u!33 &192671538
@@ -6619,7 +6619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192671536}
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0.49999997, y: 0.5000006, z: 1.5}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1432221319}
@@ -17602,6 +17602,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6223678584524462225, guid: 653c54764dd682a43aa4f1eb08793c93, type: 3}
   m_PrefabInstance: {fileID: 6223678585658980133}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1160713284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160713286}
+  - component: {fileID: 1160713285}
+  m_Layer: 0
+  m_Name: ConditionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1160713285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160713284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a8ed2be04bae84d9fc894b40dc0dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1759714274}
+  pathConditions:
+  - pathConditionName: FirstConection
+    conditions:
+    - conditionObject: {fileID: 192671541}
+      position: {x: 0.5, y: 0.5, z: 1.5}
+    paths:
+    - block: {fileID: 973005046}
+      index: 1
+    - block: {fileID: 192671543}
+      index: 0
+  - pathConditionName: SecondConection
+    conditions:
+    - conditionObject: {fileID: 192671541}
+      position: {x: 0.5, y: 0.5, z: 3.5}
+    paths:
+    - block: {fileID: 1740972355}
+      index: 0
+    - block: {fileID: 192671543}
+      index: 1
+--- !u!4 &1160713286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160713284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1161693835
 GameObject:
   m_ObjectHideFlags: 0
@@ -21522,7 +21585,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19522
+  m_Name: pb_Mesh18530
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29147,7 +29210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possiblePaths:
   - target: {fileID: 192671541}
-    active: 1
+    active: 0
   - target: {fileID: 1461544207}
     active: 1
   previousBlock: {fileID: 0}
@@ -31858,7 +31921,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18822
+  m_Name: pb_Mesh17796
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
