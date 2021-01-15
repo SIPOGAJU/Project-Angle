@@ -22,13 +22,6 @@ public class MovingGround : MonoBehaviour
         if(Approximately(transform.up, camUp.transform.up, 0.02f))
         {
             currentWaypoint = 1;
-            if(gameObject.GetComponent<Walkable>() != null)
-            {
-                foreach (var path in gameObject.GetComponent<Walkable>().possiblePaths)
-                {
-                    path.active = true;
-                }
-            }
         }
         
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, moveSpeed * Time.deltaTime);
