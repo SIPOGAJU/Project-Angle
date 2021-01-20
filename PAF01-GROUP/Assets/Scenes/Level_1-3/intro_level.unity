@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: ecc0fb79e3a75164a98e19f6b321d11a, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: b9e69d7a86af62441bccd00394738b77, type: 2}
   m_HaloStrength: 0.472
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -356,19 +356,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Color.r
-      value: 0.3254902
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Color.g
-      value: 0.42352945
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Color.b
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_BounceIntensity
@@ -11296,19 +11296,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Color.r
-      value: 0.3254902
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Color.g
-      value: 0.42352945
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Color.b
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_BounceIntensity
@@ -15832,19 +15832,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Color.r
-      value: 0.3254902
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Color.g
-      value: 0.42352945
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Color.b
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5431875248028798867, guid: e8bc79f751ab2354abc4b137edbd2889, type: 3}
       propertyPath: m_BounceIntensity
