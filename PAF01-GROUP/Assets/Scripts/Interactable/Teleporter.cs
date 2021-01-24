@@ -40,6 +40,8 @@ public class Teleporter : MonoBehaviour
                 controller.StopCoroutine(controller.currentRoutine);
                 controller.Clear();
                 other.gameObject.transform.position = exit2.position;
+                other.gameObject.transform.up = exit2.transform.up;
+
                 wasVisited = false;
             }
         }
