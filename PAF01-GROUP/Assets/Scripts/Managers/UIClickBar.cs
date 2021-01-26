@@ -7,7 +7,6 @@ public class UIClickBar : MonoBehaviour
 {
     public float maxAmountClick;
     private float clickAmount;
-    private float currentClickAmount;
 
     public Transform progressBar;
 

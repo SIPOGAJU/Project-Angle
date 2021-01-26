@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   components:
   - {fileID: -5095125412260505425}
+  - {fileID: 1831866870153803400}
 --- !u!114 &1831866870153803400
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -76,11 +77,11 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   mode:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   gaussianStart:
-    m_OverrideState: 0
-    m_Value: 10
+    m_OverrideState: 1
+    m_Value: 15
     min: 0
   gaussianEnd:
     m_OverrideState: 0
