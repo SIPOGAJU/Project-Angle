@@ -20,7 +20,7 @@ public class Collectible : MonoBehaviour
                 gameManager.instance.SetCollectibleAmount();
 
 
-            FindObjectOfType<AudioManager>().Play("Collectable");
+            //FindObjectOfType<AudioManager>().Play("Collectable");
             Instantiate(collected, transform.position, transform.rotation);
             Destroy(this.gameObject); 
         }

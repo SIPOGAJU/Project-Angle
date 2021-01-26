@@ -76,7 +76,8 @@ public class Walkable : MonoBehaviour
                 hasPushableOnTop = false;
                 foreach (var path in possiblePaths)
                 {
-                    path.active = true;
+                    if(path.active == true)
+                        path.active = true;
                 }
             }
         }
