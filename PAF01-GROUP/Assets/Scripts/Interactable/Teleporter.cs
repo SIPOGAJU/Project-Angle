@@ -30,7 +30,7 @@ public class Teleporter : MonoBehaviour
                 other.gameObject.transform.up = exit1.transform.up;
                 wasVisited = true;
 
-                FindObjectOfType<AudioManager>().Play("CamTrans");
+                //FindObjectOfType<AudioManager>().Play("CamTrans");
             }
 
             else if(wasVisited == true && exit2 != null)

@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
         walking = true;
         while (true)
         {
-            if (Vector3.Distance(finalPath[targetIndex].GetComponent<Walkable>().GetWalkPoint() + transform.up / 2f, transform.position) < 0.1f)
+            if (Vector3.Distance(finalPath[targetIndex].GetComponent<Walkable>().GetWalkPoint() + transform.up / 2f, transform.position) < 0.05f)
             {
                 targetIndex++;
                 if (targetIndex >= finalPath.Count)
