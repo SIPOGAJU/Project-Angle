@@ -6,6 +6,7 @@ using System;
 public class Collectible : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 3f;
+    [SerializeField] private ParticleSystem collected;
 
     private void Update()
     {
@@ -15,8 +16,12 @@ public class Collectible : MonoBehaviour
     {
         if(c.CompareTag("Player"))
         {
-            gameManager.instance.SetCollectibleAmount();
+            if(gameManager.instance != null)
+                gameManager.instance.SetCollectibleAmount();
+
+
             FindObjectOfType<AudioManager>().Play("Collectable");
+            Instantiate(collected, transform.position, transform.rotation);
             Destroy(this.gameObject); 
         }
     }
