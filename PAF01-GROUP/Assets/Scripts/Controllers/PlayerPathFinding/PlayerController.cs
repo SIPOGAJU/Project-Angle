@@ -26,8 +26,12 @@ public class PlayerController : MonoBehaviour
     public IEnumerator currentRoutine;
     public event System.Action OnPlayerClick;
 
+    [Space]
+    private AudioManager audioManager;
+
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         RayCastDown();
     }
 
@@ -221,6 +225,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnPlayerClicked()
     {
+
+        //audioManager.Play("Click");
         if (OnPlayerClick != null)
             OnPlayerClick();
     }
