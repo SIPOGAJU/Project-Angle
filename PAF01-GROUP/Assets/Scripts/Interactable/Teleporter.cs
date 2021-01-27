@@ -5,8 +5,8 @@ using DG.Tweening;
 
 public class Teleporter : MonoBehaviour
 {
-    public Transform exit1;
-    public Transform exit2;
+    public Transform exitA;
+    public Transform exitB;
     private bool wasVisited;
 
     private PlayerController controller;
@@ -22,25 +22,21 @@ public class Teleporter : MonoBehaviour
         {
             if(wasVisited == false)
             {
-
-                //DOTween.KillAll(other.gameObject);
                 controller.StopCoroutine(controller.currentRoutine);
                 controller.Clear();
-                other.gameObject.transform.position = exit1.position;
-                other.gameObject.transform.up = exit1.transform.up;
+                other.gameObject.transform.up = exitA.transform.up;
+                other.gameObject.transform.position = exitA.GetComponent<Walkable>().GetWalkPoint() + controller.transform.up / 2f;
                 wasVisited = true;
 
                 //FindObjectOfType<AudioManager>().Play("CamTrans");
             }
 
-            else if(wasVisited == true && exit2 != null)
+            else if(wasVisited == true && exitB != null)
             {
-
-                //DOTween.KillAll(other.gameObject);
                 controller.StopCoroutine(controller.currentRoutine);
                 controller.Clear();
-                other.gameObject.transform.position = exit2.position;
-                other.gameObject.transform.up = exit2.transform.up;
+                other.gameObject.transform.up = exitB.transform.up;
+                other.gameObject.transform.position = exitB.GetComponent<Walkable>().GetWalkPoint() + controller.transform.up / 2f;
 
                 wasVisited = false;
             }
