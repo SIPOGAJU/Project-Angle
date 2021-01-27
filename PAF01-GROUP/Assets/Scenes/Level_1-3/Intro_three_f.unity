@@ -1027,7 +1027,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3734997}
-  m_LocalRotation: {x: -0, y: -0, z: -0.68410087, w: 0.7293875}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 2, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1035,7 +1035,7 @@ Transform:
   - {fileID: 2082954222}
   m_Father: {fileID: 0}
   m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -86.33}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!43 &13645096
 Mesh:
   m_ObjectHideFlags: 0
@@ -14543,12 +14543,12 @@ GameObject:
   m_Component:
   - component: {fileID: 531192637}
   m_Layer: 0
-  m_Name: waypoint (3)
+  m_Name: waypoint2
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &531192637
 Transform:
   m_ObjectHideFlags: 0
@@ -14557,7 +14557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531192636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0.00000011920929, z: 1}
+  m_LocalPosition: {x: 2, y: 0.00000011920929, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -23947,8 +23947,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1136868011}
+  - {fileID: 531192637}
   moveSpeed: 10
 --- !u!114 &763506513
 MonoBehaviour:
@@ -27920,7 +27920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &839899581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37187,7 +37187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1054359606
 Transform:
   m_ObjectHideFlags: 0
@@ -38965,12 +38965,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1136868011}
   m_Layer: 0
-  m_Name: waypoint (2)
+  m_Name: waypoint2
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1136868011
 Transform:
   m_ObjectHideFlags: 0
@@ -38979,7 +38979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136868010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 1.0000001, z: 1}
+  m_LocalPosition: {x: 2, y: 1.0000001, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -77948,7 +77948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1978238968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79202,7 +79202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1985027058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80480,9 +80480,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameFininishedObjects: {fileID: 0}
-  collectibleCounter1: {fileID: 0}
-  collectibleCounter2: {fileID: 0}
-  collectibleCounter3: {fileID: 0}
+  horizontalSlider:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  verticalSlider:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  clickAmount: 0
+  maxClickAmount: 0
+  tutorialOverlayPageOne: {fileID: 0}
 --- !u!1 &2007937554
 GameObject:
   m_ObjectHideFlags: 0
