@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator currentRoutine;
     public event System.Action OnPlayerClick;
+    public event System.Action OnGameOver;
 
     [Space]
     private AudioManager audioManager;
@@ -37,6 +38,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (currentCube.GetComponent<Walkable>().isGoalCube)
+        {
+            if (OnGameOver != null)
+                OnGameOver();
+
+            return;
+        }
 
         //GET CURRENT CUBE (UNDER PLAYER)
         RayCastDown();

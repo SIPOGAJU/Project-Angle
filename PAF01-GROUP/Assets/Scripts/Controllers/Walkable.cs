@@ -15,6 +15,7 @@ public class Walkable : MonoBehaviour
     [Header("Booleans")]
     public bool isStair = false;
     public bool movingGround = false;
+    public bool isGoalCube = false;
 
     [Space]
 

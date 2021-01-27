@@ -167,6 +167,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -2661,6 +2662,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -4052,6 +4054,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -4965,6 +4968,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -6526,6 +6530,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -7355,6 +7360,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -8498,6 +8504,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -9437,6 +9444,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -10510,6 +10518,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -12506,6 +12515,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -13780,6 +13790,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -14687,6 +14698,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -15762,6 +15774,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -16686,6 +16699,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 1
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -17921,6 +17935,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -18826,6 +18841,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -19722,6 +19738,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 1
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -20746,6 +20763,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -22192,6 +22210,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -23593,6 +23612,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -24767,6 +24787,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -25704,6 +25725,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -26941,6 +26963,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -28014,6 +28037,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -28921,6 +28945,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -29830,6 +29855,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -35715,6 +35741,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -37743,6 +37770,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -38574,6 +38602,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -39500,6 +39529,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 1
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -40405,6 +40435,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -41201,7 +41232,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh212188
+  m_Name: pb_Mesh291874
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41400,6 +41431,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -42307,6 +42339,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -43284,6 +43317,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -44191,6 +44225,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -45100,6 +45135,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -46171,6 +46207,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -47479,6 +47516,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -48504,6 +48542,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -49337,6 +49376,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -50673,6 +50713,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -51996,6 +52037,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -52907,6 +52949,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -53814,6 +53857,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -54740,6 +54784,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 1
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -55666,6 +55711,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 1
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -56868,6 +56914,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -58009,6 +58056,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
