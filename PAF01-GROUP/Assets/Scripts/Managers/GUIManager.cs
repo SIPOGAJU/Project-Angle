@@ -17,6 +17,11 @@ public class GUIManager : MonoBehaviour
     public GameObject collectibleCounter2; 
     public GameObject collectibleCounter3; 
 
+
+    [SerializeField] GameObject[] horizontalSlider = new GameObject[4]; 
+    [SerializeField] GameObject[] verticalSlider = new GameObject[4];
+    [SerializeField] float clickAmount; 
+    [SerializeField] float maxClickAmount; 
     void Awake()
     {
         if(instance == null) { 
@@ -34,11 +39,13 @@ public class GUIManager : MonoBehaviour
         {
             goal.GoalCollected += LoadGameFinishedGUI;
         }
+
+        FindObjectOfType<PlayerController>().OnPlayerClick += SetSliderValue;
     }
 
     void Update()
     {
-        
+        SetSliderFill(clickAmount); 
     } 
 
 
@@ -89,4 +96,42 @@ public class GUIManager : MonoBehaviour
             collectibleCounter3.GetComponent<Image>().color = new Color32(255,250,77,255); 
         }
     }
+
+    public  void SetSliderValue()
+    {
+        clickAmount++;
+        if (clickAmount >= maxClickAmount)
+        {
+            FindObjectOfType<PlayerController>().OnPlayerClick -= SetSliderValue;
+        }
+            
+    }
+
+    public void SetSliderFill(float clicks)
+    {
+        if(clicks < maxClickAmount/2)
+        {
+            Debug.Log("Vertical Sliders"); 
+            foreach(GameObject slider in verticalSlider)
+            {
+                //Value lies between 0.51 and 1; 
+                slider.GetComponent<Slider>().value = 1 - (clicks / maxClickAmount); 
+            }
+        }
+        else if(clicks > maxClickAmount / 2)
+        {
+            //Sets Vertical Sliders to 0; 
+            foreach(GameObject slider in verticalSlider)
+            {
+                slider.GetComponent<Slider>().value = .5f; 
+            }
+
+            foreach(GameObject slider in horizontalSlider)
+            {
+                slider.GetComponent<Slider>().value = 1 - (clicks / maxClickAmount);
+            }
+        }
+    }
+
+
 }
