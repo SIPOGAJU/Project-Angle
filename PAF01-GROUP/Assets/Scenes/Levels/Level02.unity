@@ -1171,6 +1171,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -2271,6 +2272,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -3098,6 +3100,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -4092,6 +4095,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -5001,6 +5005,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -8495,7 +8500,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh183562
+  m_Name: pb_Mesh300948
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8710,6 +8715,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -9666,6 +9672,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -10641,6 +10648,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -11552,6 +11560,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -12622,6 +12631,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -14513,6 +14523,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -15411,6 +15422,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -16484,6 +16496,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -17489,6 +17502,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -18794,6 +18808,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -19703,6 +19718,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -20956,6 +20972,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -21864,6 +21881,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 1
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -22734,6 +22752,8 @@ MonoBehaviour:
   - {fileID: 447039728}
   - {fileID: 1629365214}
   moveSpeed: 10
+  moveWithCamera: 1
+  moveWithPlayer: 0
 --- !u!1 &1476452751
 GameObject:
   m_ObjectHideFlags: 0
@@ -22786,6 +22806,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -29334,6 +29355,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -30237,20 +30259,26 @@ MonoBehaviour:
     conditions:
     - conditionObject: {fileID: 1474152595}
       position: {x: -1.5, y: 1, z: 0}
+      eulerAngle: {x: 0, y: 0, z: 0}
     paths:
     - block: {fileID: 1474152596}
       index: 0
     - block: {fileID: 635776217}
       index: 2
+    usePosition: 1
+    useRotation: 0
   - pathConditionName: SecondBlockConection
     conditions:
     - conditionObject: {fileID: 2035596090}
       position: {x: 1.5, y: -1, z: 1}
+      eulerAngle: {x: 0, y: 0, z: 0}
     paths:
     - block: {fileID: 2035596091}
       index: 0
     - block: {fileID: 1224239891}
       index: 1
+    usePosition: 1
+    useRotation: 0
 --- !u!4 &1664127416
 Transform:
   m_ObjectHideFlags: 0
@@ -31438,6 +31466,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -32347,6 +32376,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -33748,6 +33778,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -35255,6 +35286,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -36220,6 +36252,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 1
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -37090,6 +37123,8 @@ MonoBehaviour:
   - {fileID: 261990291}
   - {fileID: 1225330473}
   moveSpeed: 10
+  moveWithCamera: 1
+  moveWithPlayer: 0
 --- !u!43 &2048459179
 Mesh:
   m_ObjectHideFlags: 0

@@ -9,6 +9,9 @@ public class MovingGround : MonoBehaviour
     int currentWaypoint;
     public float moveSpeed;
 
+    public bool moveWithCamera;
+    public bool moveWithPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +22,20 @@ public class MovingGround : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Approximately(transform.up, camUp.transform.up, 0.02f))
+        if (moveWithCamera)
         {
-            currentWaypoint = 1;
+
+            if (Approximately(transform.up, camUp.transform.up, 0.02f))
+            {
+                currentWaypoint = 1;
+            }
+            else
+            {
+                currentWaypoint = 0;
+            }
+
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, moveSpeed * Time.deltaTime);
         }
-        else
-        {
-            currentWaypoint = 0;
-        }
-        
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, moveSpeed * Time.deltaTime);
     }
 
     public bool Approximately(Vector3 me, Vector3 other, float allowedDifference)
