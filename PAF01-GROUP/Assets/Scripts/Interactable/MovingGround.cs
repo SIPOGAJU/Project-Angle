@@ -23,6 +23,10 @@ public class MovingGround : MonoBehaviour
         {
             currentWaypoint = 1;
         }
+        else
+        {
+            currentWaypoint = 0;
+        }
         
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, moveSpeed * Time.deltaTime);
     }
