@@ -62,12 +62,7 @@ public class gameManager : MonoBehaviour
 
     public void SetCollectibleAmount()
     {
-        
         currentCollectibles++; 
-        GUIManager.instance.SetCollectibleGUI(); 
-
-        
-            
     }
 
     public void PauseGame()
