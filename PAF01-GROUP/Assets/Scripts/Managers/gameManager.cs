@@ -80,4 +80,17 @@ public class gameManager : MonoBehaviour
         //Could go back to Main Menu Screen instead
         Application.Quit(); 
     }
+
+    public void CalculateScore()
+    {
+        float baseScore = 1000; 
+        baseScore *= currentCollectibles; 
+        //If more clicks are used then optimalClickAmount, points are taken away; One Click equals 200points; 
+        float clicks = GUIManager.instance.optimalClickAmount - GUIManager.instance.clickAmount;  
+        if(clicks < 0 )
+        {
+            baseScore -= clicks * 200f; 
+        }
+
+    }
 }

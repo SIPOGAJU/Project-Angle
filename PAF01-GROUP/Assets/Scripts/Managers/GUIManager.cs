@@ -18,8 +18,8 @@ public class GUIManager : MonoBehaviour
 
     [SerializeField] GameObject[] horizontalSlider = new GameObject[4]; 
     [SerializeField] GameObject[] verticalSlider = new GameObject[4];
-    [SerializeField] float clickAmount; 
-    [SerializeField] float maxClickAmount; 
+    public float clickAmount; 
+    public float optimalClickAmount; 
 
     [SerializeField] GameObject tutorialOverlayPageOne; 
     void Awake()
@@ -85,7 +85,7 @@ public class GUIManager : MonoBehaviour
     public  void SetSliderValue()
     {
         clickAmount++;
-        if (clickAmount >= maxClickAmount)
+        if (clickAmount >= optimalClickAmount)
         {
             FindObjectOfType<PlayerController>().OnPlayerClick -= SetSliderValue;
         }
@@ -94,17 +94,17 @@ public class GUIManager : MonoBehaviour
 
     public void SetSliderFill(float clicks)
     {
-        if(clicks < maxClickAmount/2)
+        if(clicks < optimalClickAmount/2)
         {
             
             foreach(GameObject slider in verticalSlider)
             {
                 //Value lies between 0.51 and 1; 
-                float value = Mathf.Lerp(slider.GetComponent<Slider>().value, (1-(clicks / maxClickAmount)), 0.01f); 
+                float value = Mathf.Lerp(slider.GetComponent<Slider>().value, (1-(clicks / optimalClickAmount)), 0.01f); 
                 slider.GetComponent<Slider>().value = value; 
             }
         }
-        else if(clicks > maxClickAmount / 2)
+        else if(clicks > optimalClickAmount / 2)
         {
             //Sets Vertical Sliders to 0; 
             foreach(GameObject slider in verticalSlider)
@@ -114,7 +114,7 @@ public class GUIManager : MonoBehaviour
 
             foreach(GameObject slider in horizontalSlider)
             {
-                float value = Mathf.Lerp(slider.GetComponent<Slider>().value, (1-(clicks / maxClickAmount)), 0.01f); 
+                float value = Mathf.Lerp(slider.GetComponent<Slider>().value, (1-(clicks / optimalClickAmount)), 0.01f); 
                 slider.GetComponent<Slider>().value = value;
             }
         }
