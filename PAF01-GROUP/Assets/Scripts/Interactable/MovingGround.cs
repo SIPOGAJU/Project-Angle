@@ -33,11 +33,21 @@ public class MovingGround : MonoBehaviour
             {
                 currentWaypoint = 0;
             }
-
-            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, moveSpeed * Time.deltaTime);
         }
+
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, moveSpeed * Time.deltaTime);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && moveWithPlayer)
+        {
+            if (currentWaypoint == 1)
+                currentWaypoint = 0;
+            else if (currentWaypoint == 0)
+                currentWaypoint = 1;
+        }
+    }
     public bool Approximately(Vector3 me, Vector3 other, float allowedDifference)
     {
         var dx = me.x - other.x;
