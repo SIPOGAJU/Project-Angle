@@ -43,10 +43,13 @@ public class gameManager : MonoBehaviour
     public void Start()
     {
         
-        //player = FindObjectOfType<TouchPlayerController>(); 
+        player = FindObjectOfType<PlayerController>(); 
+        player.OnGameOver += GoalReached; 
         currentCollectibles = 0; 
 
         GameState = GAME_STATE.gameRunning; 
+
+        
     }
 
     public void Update() 
@@ -86,23 +89,27 @@ public class gameManager : MonoBehaviour
     public void GoalReached()
     {
         GameState = GAME_STATE.gamePaused; 
-        CalculateScore(); 
+        CalculateScore(out score); 
+        GUIManager.instance.GameOver(score, currentCollectibles); 
+        //Debug.Log("Goal Reached + " + score); 
         //Disable Input
         //Show EndgameScreen with Collectibles and Score
     }
 
-    public void CalculateScore()
+    public void CalculateScore(out float returnScore)
     {
+        float clicks = GUIManager.instance.clickAmount; 
+        float optimalClicks = GUIManager.instance.optimalClickAmount; 
         float baseScore = 1000; 
         baseScore *= currentCollectibles; 
-        //If more clicks are used then optimalClickAmount, points are taken away; One Click equals 200points; 
-        float clicks = GUIManager.instance.optimalClickAmount - GUIManager.instance.clickAmount;  
-        if(clicks < 0 )
+        //If more clicks are used then optimalClickAmount, points are taken away; One Click equals 100points; 
+        if(clicks > optimalClicks)
         {
-            baseScore -= clicks * 200f; 
+            float overClicks = clicks - optimalClicks; 
+            baseScore -= overClicks*100f; 
         }
-
-        score = baseScore; 
+        returnScore = baseScore; 
+        
 
     }
 }

@@ -8,6 +8,8 @@ TagManager:
   - Pushable
   - Obstacle
   - Patrol
+  - ScoreText
+  - CollectibleUI
   layers:
   - Default
   - TransparentFX
