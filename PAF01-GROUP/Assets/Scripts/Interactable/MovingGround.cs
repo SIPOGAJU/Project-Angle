@@ -42,10 +42,8 @@ public class MovingGround : MonoBehaviour
     {
         if (other.CompareTag("Player") && moveWithPlayer)
         {
-            if (currentWaypoint == 1)
-                currentWaypoint = 0;
-            else if (currentWaypoint == 0)
-                currentWaypoint = 1;
+            StopCoroutine(MoveCubePlayer());
+            StartCoroutine(MoveCubePlayer());
         }
     }
     public bool Approximately(Vector3 me, Vector3 other, float allowedDifference)
@@ -63,5 +61,14 @@ public class MovingGround : MonoBehaviour
             return false;
         else 
             return true;
+    }
+
+    IEnumerator MoveCubePlayer()
+    {
+        yield return new WaitForSeconds(1f);
+        if (currentWaypoint == 1)
+            currentWaypoint = 0;
+        else if (currentWaypoint == 0)
+            currentWaypoint = 1;
     }
 }

@@ -698,6 +698,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -1607,6 +1608,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -2775,6 +2777,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -3953,6 +3956,7 @@ GameObject:
   - component: {fileID: 83269686}
   - component: {fileID: 83269685}
   - component: {fileID: 83269684}
+  - component: {fileID: 83269689}
   m_Layer: 0
   m_Name: StairC-D
   m_TagString: Untagged
@@ -3970,8 +3974,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -1.5, y: 1.5, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 882228002}
+  m_Children: []
   m_Father: {fileID: 250594291}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -3991,6 +3994,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -4002,7 +4006,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83269682}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -4766,6 +4770,20 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &83269689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83269682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34083aa0ea84b3c469da73ec6017f43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitA: {fileID: 31874611}
+  exitB: {fileID: 185274887}
 --- !u!1 &84345764
 GameObject:
   m_ObjectHideFlags: 0
@@ -5233,7 +5251,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh142792
+  m_Name: pb_Mesh70216
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5578,6 +5596,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -6574,6 +6593,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -8154,7 +8174,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh185552
+  m_Name: pb_Mesh70352
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8326,7 +8346,7 @@ GameObject:
   - component: {fileID: 324915616}
   - component: {fileID: 324915615}
   - component: {fileID: 324915614}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Collectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10025,6 +10045,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -10932,6 +10953,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -12489,6 +12511,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -14197,6 +14220,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -17402,6 +17426,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -18404,6 +18429,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -19891,74 +19917,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869116915}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &882228001
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 882228002}
-  - component: {fileID: 882228005}
-  - component: {fileID: 882228004}
-  - component: {fileID: 882228003}
-  m_Layer: 0
-  m_Name: triggerArea
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &882228002
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882228001}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5000001, z: 0.5000001}
-  m_Children: []
-  m_Father: {fileID: 83269683}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &882228003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882228001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34083aa0ea84b3c469da73ec6017f43b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exitA: {fileID: 31874611}
-  exitB: {fileID: 185274887}
---- !u!65 &882228004
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882228001}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.4103627, z: 1}
-  m_Center: {x: 0, y: 0.20518138, z: 0}
---- !u!33 &882228005
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882228001}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &884490691
 GameObject:
   m_ObjectHideFlags: 0
@@ -20604,6 +20562,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -21513,6 +21472,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -22405,74 +22365,6 @@ Transform:
   m_Father: {fileID: 1257607668}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &1053729226
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1053729227}
-  - component: {fileID: 1053729230}
-  - component: {fileID: 1053729229}
-  - component: {fileID: 1053729228}
-  m_Layer: 0
-  m_Name: triggerArea
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &1053729227
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053729226}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5000001, z: 0.5000001}
-  m_Children: []
-  m_Father: {fileID: 1932830918}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1053729228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053729226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34083aa0ea84b3c469da73ec6017f43b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exitA: {fileID: 1167420776}
-  exitB: {fileID: 1649507668}
---- !u!65 &1053729229
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053729226}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1053729230
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053729226}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1090812169
 GameObject:
   m_ObjectHideFlags: 0
@@ -22657,7 +22549,7 @@ GameObject:
   - component: {fileID: 1105527222}
   - component: {fileID: 1105527221}
   - component: {fileID: 1105527220}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Collectable2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24288,6 +24180,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -25186,6 +25079,12 @@ MonoBehaviour:
   clickAmount: 0
   optimalClickAmount: 0
   tutorialOverlayPageOne: {fileID: 0}
+  GameOverOverlay: {fileID: 0}
+  scoreText: {fileID: 0}
+  collectiblesUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1167571548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25200,6 +25099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCollectibles: 2
   currentCollectibles: 0
+  score: 0
   GameState: 0
 --- !u!4 &1167571549
 Transform:
@@ -26327,6 +26227,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -28239,6 +28140,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -30178,7 +30080,7 @@ GameObject:
   - component: {fileID: 1447394429}
   - component: {fileID: 1447394428}
   - component: {fileID: 1447394427}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Collectable3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31216,6 +31118,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -32382,6 +32285,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -33639,7 +33543,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh186446
+  m_Name: pb_Mesh71250
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -34507,6 +34411,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -35606,6 +35511,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -41445,7 +41351,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh186198
+  m_Name: pb_Mesh71002
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -42358,6 +42264,7 @@ GameObject:
   - component: {fileID: 1932830921}
   - component: {fileID: 1932830920}
   - component: {fileID: 1932830919}
+  - component: {fileID: 1932830924}
   m_Layer: 0
   m_Name: StairD-E
   m_TagString: Untagged
@@ -42375,8 +42282,7 @@ Transform:
   m_LocalRotation: {x: 0.000000059604645, y: -0.0000020042062, z: 0.7071069, w: 0.70710677}
   m_LocalPosition: {x: -1.5, y: -1.5, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1053729227}
+  m_Children: []
   m_Father: {fileID: 250594291}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
@@ -42396,6 +42302,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 1
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -42407,7 +42314,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932830917}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -43171,6 +43078,20 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1932830924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932830917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34083aa0ea84b3c469da73ec6017f43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitA: {fileID: 1167420776}
+  exitB: {fileID: 1649507668}
 --- !u!1 &1943099588
 GameObject:
   m_ObjectHideFlags: 0
@@ -43504,6 +43425,7 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   isStair: 0
   movingGround: 0
+  isGoalCube: 0
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
@@ -44715,7 +44637,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh144090
+  m_Name: pb_Mesh71540
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

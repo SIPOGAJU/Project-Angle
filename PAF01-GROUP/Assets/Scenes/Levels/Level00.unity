@@ -4108,7 +4108,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh43818
+  m_Name: pb_Mesh74080
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4444,7 +4444,7 @@ GameObject:
   - component: {fileID: 324915616}
   - component: {fileID: 324915615}
   - component: {fileID: 324915614}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Collectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
