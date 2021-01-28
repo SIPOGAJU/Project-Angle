@@ -65,7 +65,7 @@ public class MovingGround : MonoBehaviour
 
     IEnumerator MoveCubePlayer()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.75f);
         if (currentWaypoint == 1)
             currentWaypoint = 0;
         else if (currentWaypoint == 0)
