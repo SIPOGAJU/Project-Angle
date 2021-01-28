@@ -12,9 +12,11 @@ public class gameManager : MonoBehaviour
 
     [Header("Variables")]
 
-    [SerializeField] int maxCollectibles = 1; 
+    [SerializeField] int maxCollectibles = 3; 
     public int currentCollectibles;  
     bool gotAllCollectibles; 
+
+    public float score; 
 
 
     public enum GAME_STATE
@@ -81,6 +83,14 @@ public class gameManager : MonoBehaviour
         Application.Quit(); 
     }
 
+    public void GoalReached()
+    {
+        GameState = GAME_STATE.gamePaused; 
+        CalculateScore(); 
+        //Disable Input
+        //Show EndgameScreen with Collectibles and Score
+    }
+
     public void CalculateScore()
     {
         float baseScore = 1000; 
@@ -91,6 +101,8 @@ public class gameManager : MonoBehaviour
         {
             baseScore -= clicks * 200f; 
         }
+
+        score = baseScore; 
 
     }
 }
