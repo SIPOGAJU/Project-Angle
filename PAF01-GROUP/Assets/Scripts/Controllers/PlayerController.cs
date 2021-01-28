@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
             {
                 Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition); RaycastHit mouseHit;
 
-                if (Physics.Raycast(mouseRay, out mouseHit, 100f, layerMask, QueryTriggerInteraction.Ignore))
+                if (Physics.Raycast(mouseRay, out mouseHit, 100f, layerMask))
                 {
                     if (mouseHit.transform.GetComponent<Walkable>() != null)
                     {

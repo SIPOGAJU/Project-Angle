@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
+using TMPro; 
 
 
 public class GUIManager : MonoBehaviour
@@ -22,6 +23,11 @@ public class GUIManager : MonoBehaviour
     public float optimalClickAmount; 
 
     [SerializeField] GameObject tutorialOverlayPageOne; 
+
+    [Header("GameOverOverlay")]
+    [SerializeField] GameObject GameOverOverlay;
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] GameObject[] collectiblesUI = new GameObject[3]; 
     void Awake()
     {
         if(instance == null) { 
@@ -34,12 +40,6 @@ public class GUIManager : MonoBehaviour
 
     void Start()
     {
-        goal = FindObjectOfType<Goal>(); 
-        if(goal != null)
-        {
-            goal.GoalCollected += LoadGameFinishedGUI;
-        }
-
         FindObjectOfType<PlayerController>().OnPlayerClick += SetSliderValue;
     }
 
@@ -75,6 +75,47 @@ public class GUIManager : MonoBehaviour
         
     }
 
+    public void GameOver(float score, float collectibles)
+    {
+        GameOverOverlay.SetActive(true); 
+        float clampedScore = Mathf.Clamp(score, 0,1000000); 
+        scoreText.text = clampedScore.ToString(); 
+
+        //Set Collectibles
+        Color ogColor = collectiblesUI[1].GetComponent<MeshRenderer>().material.color; 
+        Color transparentColor = ogColor ; 
+        transparentColor.a = 100; 
+        
+        switch(collectibles)
+        {
+            case 0: 
+                foreach(GameObject collectibleUI in collectiblesUI)
+                {
+                    collectibleUI.GetComponent<MeshRenderer>().material.color = transparentColor; 
+                }
+                break; 
+            case 1: 
+                collectiblesUI[0].GetComponent<MeshRenderer>().material.color = ogColor; 
+                collectiblesUI[1].GetComponent<MeshRenderer>().material.color = transparentColor;  
+                collectiblesUI[2].GetComponent<MeshRenderer>().material.color = transparentColor;  
+                break;
+            case 2: 
+                collectiblesUI[0].GetComponent<MeshRenderer>().material.color = ogColor; 
+                collectiblesUI[1].GetComponent<MeshRenderer>().material.color = ogColor; 
+                collectiblesUI[2].GetComponent<MeshRenderer>().material.color = transparentColor; 
+                break;
+            case 3: 
+                foreach(GameObject collectibleUI in collectiblesUI)
+                {
+                    collectibleUI.GetComponent<MeshRenderer>().material.color = ogColor; 
+                }
+                break;
+
+        }
+
+        
+    }
+
     public void CloseUIWindow(GameObject UIWindow)
     {
         UIWindow.SetActive(false);  
@@ -85,11 +126,6 @@ public class GUIManager : MonoBehaviour
     public  void SetSliderValue()
     {
         clickAmount++;
-        if (clickAmount >= optimalClickAmount)
-        {
-            FindObjectOfType<PlayerController>().OnPlayerClick -= SetSliderValue;
-        }
-            
     }
 
     public void SetSliderFill(float clicks)
