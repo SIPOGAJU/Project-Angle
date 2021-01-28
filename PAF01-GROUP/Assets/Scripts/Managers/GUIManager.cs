@@ -13,7 +13,7 @@ public class GUIManager : MonoBehaviour
 
     
 
-    public GameObject gameFininishedObjects; 
+    
    
 
 
@@ -22,12 +22,19 @@ public class GUIManager : MonoBehaviour
     public float clickAmount; 
     public float optimalClickAmount; 
 
+    [Header("UI Overlays")]
+
+    public GameObject pauseGameOverlay; 
+
     [SerializeField] GameObject tutorialOverlayPageOne; 
 
     [Header("GameOverOverlay")]
     [SerializeField] GameObject GameOverOverlay;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] GameObject[] collectiblesUI = new GameObject[3]; 
+    [SerializeField] Material collectibleUIMat; 
+    [SerializeField] Material collectibleUIMatTransparent; 
+
     void Awake()
     {
         if(instance == null) { 
@@ -46,31 +53,41 @@ public class GUIManager : MonoBehaviour
     void Update()
     {
         SetSliderFill(clickAmount); 
+
+        if(gameManager.instance.GameState == gameManager.GAME_STATE.gamePaused)
+        {
+            pauseGameOverlay.SetActive(true); 
+        }
+        else
+        {
+            pauseGameOverlay.SetActive(false); 
+
+        }
     } 
 
 
     public void LoadGameFinishedGUI()
     {
-        if(gameFininishedObjects == null)
+        if(pauseGameOverlay == null)
             return; 
-        gameFininishedObjects.SetActive(true); 
+        pauseGameOverlay.SetActive(true); 
         
 
     }
 
     public void PauseGameOverlay()
     {
-        if(gameFininishedObjects == null)
+        if(pauseGameOverlay == null)
             return; 
         if(gameManager.instance.GameState == gameManager.GAME_STATE.gamePaused)
         {
             
-            gameFininishedObjects.SetActive(true);
+            pauseGameOverlay.SetActive(true);
         }
         else 
         {
             
-            gameFininishedObjects.SetActive(false); 
+            pauseGameOverlay.SetActive(false); 
         }
         
     }
@@ -84,34 +101,36 @@ public class GUIManager : MonoBehaviour
         //Set Collectibles
         Color ogColor = collectiblesUI[1].GetComponent<MeshRenderer>().material.color; 
         Color transparentColor = ogColor ; 
-        transparentColor.a = 100; 
+        transparentColor.a = 200; 
+        
         
         switch(collectibles)
         {
             case 0: 
                 foreach(GameObject collectibleUI in collectiblesUI)
                 {
-                    collectibleUI.GetComponent<MeshRenderer>().material.color = transparentColor; 
+                    collectibleUI.GetComponent<MeshRenderer>().material = collectibleUIMatTransparent; 
                 }
                 break; 
             case 1: 
-                collectiblesUI[0].GetComponent<MeshRenderer>().material.color = ogColor; 
-                collectiblesUI[1].GetComponent<MeshRenderer>().material.color = transparentColor;  
-                collectiblesUI[2].GetComponent<MeshRenderer>().material.color = transparentColor;  
+                collectiblesUI[0].GetComponent<MeshRenderer>().material = collectibleUIMat;  
+                collectiblesUI[1].GetComponent<MeshRenderer>().material = collectibleUIMatTransparent;  
+                collectiblesUI[2].GetComponent<MeshRenderer>().material = collectibleUIMatTransparent;  
                 break;
             case 2: 
-                collectiblesUI[0].GetComponent<MeshRenderer>().material.color = ogColor; 
-                collectiblesUI[1].GetComponent<MeshRenderer>().material.color = ogColor; 
-                collectiblesUI[2].GetComponent<MeshRenderer>().material.color = transparentColor; 
+                collectiblesUI[0].GetComponent<MeshRenderer>().material = collectibleUIMat; 
+                collectiblesUI[1].GetComponent<MeshRenderer>().material = collectibleUIMat; 
+                collectiblesUI[2].GetComponent<MeshRenderer>().material = collectibleUIMatTransparent; 
                 break;
             case 3: 
                 foreach(GameObject collectibleUI in collectiblesUI)
                 {
-                    collectibleUI.GetComponent<MeshRenderer>().material.color = ogColor; 
+                    collectibleUI.GetComponent<MeshRenderer>().material = collectibleUIMat; 
                 }
                 break;
 
         }
+        
 
         
     }

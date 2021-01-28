@@ -88,7 +88,7 @@ public class gameManager : MonoBehaviour
 
     public void GoalReached()
     {
-        GameState = GAME_STATE.gamePaused; 
+        GameState = GAME_STATE.gameOver; 
         CalculateScore(out score); 
         GUIManager.instance.GameOver(score, currentCollectibles); 
         //Debug.Log("Goal Reached + " + score); 
