@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: cc260ec3bcaf4a54fbaf2dba90260fe9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Canteen BN
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 230042a008126c5418fa9786d6c3c60b, type: 3}
+  - {fileID: 12800000, guid: a8089ed3786dcc24b93136c067a15add, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
