@@ -20,7 +20,10 @@ public class Teleporter : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            if(wasVisited == false)
+            if (FindObjectOfType<AudioManager>() != null)
+                FindObjectOfType<AudioManager>().Play("CamTransition");
+
+            if (wasVisited == false)
             {
                 controller.StopCoroutine(controller.currentRoutine);
                 controller.Clear();
@@ -28,7 +31,7 @@ public class Teleporter : MonoBehaviour
                 other.gameObject.transform.position = exitA.GetComponent<Walkable>().GetWalkPoint() + controller.transform.up / 2f;
                 wasVisited = true;
 
-                //FindObjectOfType<AudioManager>().Play("CamTrans");
+                
             }
 
             else if(wasVisited == true && exitB != null)

@@ -4197,7 +4197,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30052
+  m_Name: pb_Mesh25388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33137,7 +33137,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346523f41a9013740be264e11d0d4d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Theme
+    clip: {fileID: 8300000, guid: 34298a89b25ddba4094911f309af412b, type: 3}
+    volume: 0.5
+    loop: 1
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: dab153642c4cd8140977c4e127f88883, type: 3}
+    volume: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: Collectable
+    clip: {fileID: 8300000, guid: 4c2cfba500076b94d9b5744eb738871f, type: 3}
+    volume: 0.7
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &2146604546
 Transform:
   m_ObjectHideFlags: 0

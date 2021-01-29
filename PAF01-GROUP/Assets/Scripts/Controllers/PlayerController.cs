@@ -233,8 +233,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnPlayerClicked()
     {
-
-        //audioManager.Play("Click");
+        if(audioManager != null)
+            audioManager.Play("Click");
         if (OnPlayerClick != null)
             OnPlayerClick();
     }

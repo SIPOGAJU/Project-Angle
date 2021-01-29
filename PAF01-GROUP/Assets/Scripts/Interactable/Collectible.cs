@@ -19,8 +19,9 @@ public class Collectible : MonoBehaviour
             if(gameManager.instance != null)
                 gameManager.instance.SetCollectibleAmount();
 
+            if(FindObjectOfType<AudioManager>() != null)
+                FindObjectOfType<AudioManager>().Play("Collectable");
 
-            //FindObjectOfType<AudioManager>().Play("Collectable");
             Instantiate(collected, transform.position, transform.rotation);
             Destroy(this.gameObject); 
         }

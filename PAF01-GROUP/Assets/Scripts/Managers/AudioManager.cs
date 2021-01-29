@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
             s.source.clip = s.clip;
 
             s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
+            //s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
     }
@@ -55,8 +55,8 @@ public class Sound
     [Range(0f, 1f)]
     public float volume;
 
-    [Range(.1f, 3f)]
-    public float pitch;
+    //[Range(.1f, 3f)]
+    //public float pitch;
 
     public bool loop;
 
