@@ -66041,7 +66041,7 @@ MonoBehaviour:
   - {fileID: 208487241}
   - {fileID: 75534556}
   clickAmount: 0
-  optimalClickAmount: 18
+  optimalClickAmount: 25
   pauseGameOverlay: {fileID: 38702466}
   tutorialOverlayPageOne: {fileID: 0}
   tutorialOverlayPageTwo: {fileID: 0}
