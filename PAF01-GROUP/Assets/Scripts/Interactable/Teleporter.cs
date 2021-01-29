@@ -20,8 +20,8 @@ public class Teleporter : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            if (FindObjectOfType<AudioManager>() != null)
-                FindObjectOfType<AudioManager>().Play("CamTransition");
+            //if (FindObjectOfType<AudioManager>() != null)
+            //    FindObjectOfType<AudioManager>().Play("CamTransition");
 
             if (wasVisited == false)
             {

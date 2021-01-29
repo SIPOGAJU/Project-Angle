@@ -20,9 +20,6 @@ public class CameraPivot : MonoBehaviour
         if (playerTransform != null)
         {
             transform.up = Vector3.Lerp(transform.up, playerTransform.up, Time.deltaTime * rotationSpeed);
-            if (FindObjectOfType<AudioManager>() != null)
-                FindObjectOfType<AudioManager>().Play("CamTransition");
-
         }
             
     }
