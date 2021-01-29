@@ -27,6 +27,7 @@ public class GUIManager : MonoBehaviour
     public GameObject pauseGameOverlay; 
 
     [SerializeField] GameObject tutorialOverlayPageOne; 
+    [SerializeField] GameObject tutorialOverlayPageTwo; 
 
     [Header("GameOverOverlay")]
     [SerializeField] GameObject GameOverOverlay;
@@ -173,6 +174,22 @@ public class GUIManager : MonoBehaviour
                 slider.GetComponent<Slider>().value = value;
             }
         }
+    }
+
+    public void SwitchTutorialPages(int page)
+    {
+        if(page == 1)
+        {
+            tutorialOverlayPageOne.SetActive(true);
+            tutorialOverlayPageTwo.SetActive(false);
+        }
+        else if(page == 2)
+        {
+            tutorialOverlayPageOne.SetActive(false);
+            tutorialOverlayPageTwo.SetActive(true);
+        }
+        else
+            return;
     }
 
 
