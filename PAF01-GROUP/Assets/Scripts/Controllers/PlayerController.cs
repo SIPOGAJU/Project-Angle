@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 dir = path[i].position - path[i - 1].position;
             float dotProduct = Mathf.Abs(Vector3.Dot(startingDir, dir));
-            Debug.Log(dotProduct);
+            //Debug.Log(dotProduct);
             if (dotProduct < .8f) return false; //This means the path is not straight
         }
         return true;

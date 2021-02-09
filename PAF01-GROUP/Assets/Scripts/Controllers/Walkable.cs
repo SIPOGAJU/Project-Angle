@@ -25,6 +25,10 @@ public class Walkable : MonoBehaviour
 
     [Space]
     public bool hasPushableOnTop;
+
+    [Space]
+    public bool playerOnTop;
+
     private void Update()
     {
         RayCastUp();
