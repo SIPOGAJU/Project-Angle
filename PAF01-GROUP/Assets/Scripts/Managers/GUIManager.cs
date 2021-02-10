@@ -55,15 +55,18 @@ public class GUIManager : MonoBehaviour
     {
         SetSliderFill(clickAmount); 
 
-        if(gameManager.instance.GameState == gameManager.GAME_STATE.gamePaused)
+        if(pauseGameOverlay != null)
         {
+            if(gameManager.instance.GameState == gameManager.GAME_STATE.gamePaused)
+            {
             pauseGameOverlay.SetActive(true); 
-        }
-        else
-        {
+            }
+            else
+            {
             pauseGameOverlay.SetActive(false); 
-
+            }
         }
+        
     } 
 
 
