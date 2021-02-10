@@ -1966,6 +1966,7 @@ MonoBehaviour:
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
+  playerOnTop: 0
 --- !u!64 &178389299
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2961,6 +2962,7 @@ MonoBehaviour:
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
+  playerOnTop: 0
 --- !u!64 &185274889
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4956,6 +4958,7 @@ MonoBehaviour:
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
+  playerOnTop: 0
 --- !u!64 &401911455
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10233,6 +10236,7 @@ MonoBehaviour:
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
+  playerOnTop: 0
 --- !u!64 &776830239
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12704,6 +12708,7 @@ MonoBehaviour:
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
+  playerOnTop: 0
 --- !u!64 &1029989573
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15074,7 +15079,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 001e10d518439e949ac51eaf3c75e864, type: 2}
+  - {fileID: 2100000, guid: f65aae17bf458b94a92b7a4d304a6537, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17740,6 +17745,7 @@ MonoBehaviour:
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
+  playerOnTop: 0
 --- !u!64 &1449677767
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18604,6 +18610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 3
+  canRotate: 1
 --- !u!1 &1450115836
 GameObject:
   m_ObjectHideFlags: 0
@@ -18758,6 +18765,7 @@ MonoBehaviour:
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
+  playerOnTop: 0
 --- !u!64 &1479111734
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19927,6 +19935,7 @@ MonoBehaviour:
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
+  playerOnTop: 0
 --- !u!64 &1524716616
 MeshCollider:
   m_ObjectHideFlags: 0
