@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if (mouseHit.transform.GetComponent<Walkable>() != null)
                     {
-                        Debug.Log("Walkable clicked");
+                        //Debug.Log("Walkable clicked");
                         clickedCube = mouseHit.transform;
                         finalPath.Clear();
                         FindPath();
@@ -218,7 +218,6 @@ public class PlayerController : MonoBehaviour
 
     public void RayCastDown()
     {
-
         Ray playerRay = new Ray(transform.position, -transform.up);
         RaycastHit playerHit;
 

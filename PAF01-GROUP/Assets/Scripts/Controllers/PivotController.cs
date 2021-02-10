@@ -16,13 +16,23 @@ public class PivotController : MonoBehaviour
 
     void Update()
     {
-        if(canRotate)
+        if (canRotate)
         {
             if (Time.time > waitTime)
             {
                 waitTime = Time.time + timer;
                 transform.DORotate(new Vector3(0, 0, 90), .6f, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
             }
+        }
+
+        if (GetComponent<Walkable>().playerOnTop == true)
+        {
+            canRotate = false;
+        }
+
+        else
+        {
+            canRotate = true;
         }
     }
 }

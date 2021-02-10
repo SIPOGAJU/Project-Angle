@@ -64,13 +64,15 @@ public class Walkable : MonoBehaviour
     
     private void RayCastUp()
     {
+        Ray ray = new Ray(transform.position, transform.up);
         RaycastHit hit;
 
-        if(Physics.Raycast(transform.position, transform.up, out hit))
+        if (Physics.Raycast(ray, out hit))
         {
             if (hit.collider.CompareTag("Pushable"))
             {
                 hasPushableOnTop = true;
+                playerOnTop = false;
                 foreach (var path in possiblePaths)
                 {
                     path.active = false;
@@ -85,6 +87,17 @@ public class Walkable : MonoBehaviour
                         path.active = true;
                 }
             }
+
+            if (hit.transform.CompareTag("Player"))
+            {
+                playerOnTop = true;
+                hasPushableOnTop = false;
+            }    
+        }
+
+        if(!Physics.Raycast(ray, out hit))
+        {
+            playerOnTop = false;
         }
     }
 }
