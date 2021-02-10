@@ -47,7 +47,8 @@ public class GUIManager : MonoBehaviour
     }
 
     void Start()
-    {
+    {   
+        
         FindObjectOfType<PlayerController>().OnPlayerClick += SetSliderValue;
     }
 
