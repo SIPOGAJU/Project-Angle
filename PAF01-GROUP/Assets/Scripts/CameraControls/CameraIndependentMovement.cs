@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraIndependentMovement : MonoBehaviour
 {
     public Camera cam;
+    public Camera camReference;
     [SerializeField] float rotationSensivityY = 2f;
     [SerializeField] float rotationSensivityX = 2f;
 
