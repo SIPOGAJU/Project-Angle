@@ -5990,7 +5990,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh273860
+  m_Name: pb_Mesh47622
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8211,7 +8211,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh273550
+  m_Name: pb_Mesh47312
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13054,7 +13054,6 @@ GameObject:
   - component: {fileID: 341612683}
   - component: {fileID: 341612682}
   - component: {fileID: 341612681}
-  - component: {fileID: 341612685}
   m_Layer: 0
   m_Name: c3 (3)
   m_TagString: Untagged
@@ -13927,19 +13926,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!114 &341612685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341612679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0285f8bf15ecc2547ab04fcf5c4bd4f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 5
 --- !u!1 &355339866
 GameObject:
   m_ObjectHideFlags: 0
@@ -19809,7 +19795,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh273894
+  m_Name: pb_Mesh47656
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25996,7 +25982,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh273686
+  m_Name: pb_Mesh47448
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27399,7 +27385,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh272158
+  m_Name: pb_Mesh45900
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -50220,7 +50206,6 @@ GameObject:
   - component: {fileID: 1141360559}
   - component: {fileID: 1141360558}
   - component: {fileID: 1141360557}
-  - component: {fileID: 1141360561}
   m_Layer: 0
   m_Name: c1 (3)
   m_TagString: Untagged
@@ -51093,19 +51078,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!114 &1141360561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141360555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0285f8bf15ecc2547ab04fcf5c4bd4f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 5
 --- !u!1 &1141818157
 GameObject:
   m_ObjectHideFlags: 0
@@ -57075,7 +57047,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh273122
+  m_Name: pb_Mesh46884
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -57572,6 +57544,7 @@ MonoBehaviour:
   walkPointOffset: 0.5
   stairOffset: 0.4
   hasPushableOnTop: 0
+  playerOnTop: 0
 --- !u!64 &1385392600
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60804,7 +60777,6 @@ GameObject:
   - component: {fileID: 1449677769}
   - component: {fileID: 1449677768}
   - component: {fileID: 1449677767}
-  - component: {fileID: 1449677771}
   m_Layer: 0
   m_Name: r1
   m_TagString: Untagged
@@ -61678,19 +61650,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!114 &1449677771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449677764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0285f8bf15ecc2547ab04fcf5c4bd4f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 5
 --- !u!1 &1450115836
 GameObject:
   m_ObjectHideFlags: 0
@@ -64149,7 +64108,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh273372
+  m_Name: pb_Mesh47134
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -64597,7 +64556,6 @@ GameObject:
   - component: {fileID: 1544169272}
   - component: {fileID: 1544169271}
   - component: {fileID: 1544169270}
-  - component: {fileID: 1544169274}
   m_Layer: 0
   m_Name: c2
   m_TagString: Untagged
@@ -65470,19 +65428,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!114 &1544169274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544169268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0285f8bf15ecc2547ab04fcf5c4bd4f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 5
 --- !u!1 &1550161031
 GameObject:
   m_ObjectHideFlags: 0
@@ -68122,7 +68067,6 @@ GameObject:
   - component: {fileID: 1618532358}
   - component: {fileID: 1618532357}
   - component: {fileID: 1618532356}
-  - component: {fileID: 1618532360}
   m_Layer: 0
   m_Name: c4
   m_TagString: Untagged
@@ -68995,19 +68939,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!114 &1618532360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618532354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0285f8bf15ecc2547ab04fcf5c4bd4f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 5
 --- !u!1 &1620777517
 GameObject:
   m_ObjectHideFlags: 0
@@ -77863,7 +77794,6 @@ GameObject:
   - component: {fileID: 1772426956}
   - component: {fileID: 1772426955}
   - component: {fileID: 1772426954}
-  - component: {fileID: 1772426953}
   m_Layer: 0
   m_Name: r2
   m_TagString: Untagged
@@ -77885,28 +77815,6 @@ Transform:
   m_Father: {fileID: 1449677765}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1772426953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772426951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38b82a20bcada3a429ce51de6efb3856, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  possiblePaths:
-  - target: {fileID: 1449677765}
-    active: 1
-  previousBlock: {fileID: 0}
-  isStair: 0
-  movingGround: 0
-  isGoalCube: 0
-  walkPointOffset: 0.5
-  stairOffset: 0.4
-  hasPushableOnTop: 0
 --- !u!64 &1772426954
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -81118,7 +81026,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh273452
+  m_Name: pb_Mesh47214
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -84630,7 +84538,6 @@ GameObject:
   - component: {fileID: 1962462619}
   - component: {fileID: 1962462618}
   - component: {fileID: 1962462617}
-  - component: {fileID: 1962462621}
   m_Layer: 0
   m_Name: c3
   m_TagString: Untagged
@@ -85503,19 +85410,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!114 &1962462621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962462615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0285f8bf15ecc2547ab04fcf5c4bd4f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 5
 --- !u!1 &1969478489
 GameObject:
   m_ObjectHideFlags: 0

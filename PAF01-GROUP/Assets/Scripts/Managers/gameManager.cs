@@ -44,7 +44,8 @@ public class gameManager : MonoBehaviour
     {
         
         player = FindObjectOfType<PlayerController>(); 
-        player.OnGameOver += GoalReached; 
+        if(player != null)
+            player.OnGameOver += GoalReached; 
         currentCollectibles = 0; 
 
         GameState = GAME_STATE.gameRunning; 
