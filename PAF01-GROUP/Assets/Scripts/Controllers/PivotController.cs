@@ -11,6 +11,8 @@ public class PivotController : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(transform.GetChild(0).name);
+        Debug.Log(transform.GetChild(1).name);
         waitTime = 2f;
     }
 
@@ -23,16 +25,6 @@ public class PivotController : MonoBehaviour
                 waitTime = Time.time + timer;
                 transform.DORotate(new Vector3(0, 0, 90), .6f, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
             }
-        }
-
-        if (GetComponent<Walkable>().playerOnTop == true)
-        {
-            canRotate = false;
-        }
-
-        else
-        {
-            canRotate = true;
         }
     }
 }

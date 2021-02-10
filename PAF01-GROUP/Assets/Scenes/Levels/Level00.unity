@@ -2885,6 +2885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClickEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 2109450275845210722, guid: 68e04a53d14638b4ebeb770d743f258e, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7258318204049309332, guid: 68e04a53d14638b4ebeb770d743f258e, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.atime1
       value: 15035
@@ -4806,6 +4810,50 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &396130251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396130252}
+  - component: {fileID: 396130253}
+  m_Layer: 2
+  m_Name: triggerArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &396130252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396130251}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1449677765}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &396130253
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396130251}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.81916285, y: 0.08560467, z: 0.8013802}
+  m_Center: {x: 0.01377368, y: -0.45719767, z: 0.024581939}
 --- !u!1 &399344087
 GameObject:
   m_ObjectHideFlags: 0
@@ -9866,7 +9914,7 @@ GameObject:
   - component: {fileID: 762774122}
   - component: {fileID: 762774121}
   - component: {fileID: 762774120}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17718,6 +17766,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1782582393}
+  - {fileID: 396130252}
   m_Father: {fileID: 250594291}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19718,7 +19767,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh147644
+  m_Name: pb_Mesh376674
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

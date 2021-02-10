@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraIndependentMovement : MonoBehaviour
 {
     public Camera cam;
-    public Camera camReference;
     [SerializeField] float rotationSensivityY = 2f;
     [SerializeField] float rotationSensivityX = 2f;
 
@@ -24,26 +23,35 @@ public class CameraIndependentMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire2"))
+
+        bool rotating = Input.GetButton("Fire2");
+        if (rotating)
         {
             cam.gameObject.SetActive(true);
 
             rotationX += Input.GetAxis("Mouse X") * rotationSensivityX * Time.deltaTime;
             rotationY += Input.GetAxis("Mouse Y") * rotationSensivityY * Time.deltaTime;
             rotationY = Mathf.Clamp(rotationY, 0f, 90f);
+
+            transform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
+            transform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.right);
+
+            Debug.Log(rotationX);
+            Debug.Log(rotationY);
         }
-        else
+        else if (!rotating)
         {
             _timer -= Time.deltaTime;
         }
 
-        if(_timer <= 0)
+        if (_timer <= 0)
         {
             cam.gameObject.SetActive(false);
             _timer = timer;
         }
 
-        transform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
-        transform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.right);
+        
+
+        
     }
 }

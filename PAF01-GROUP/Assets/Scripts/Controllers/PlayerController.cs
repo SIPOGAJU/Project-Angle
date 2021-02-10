@@ -243,4 +243,20 @@ public class PlayerController : MonoBehaviour
         Ray ray = new Ray(transform.position, -transform.up);
         Gizmos.DrawRay(ray);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponentInParent<PivotController>() != null)
+        {
+            other.gameObject.GetComponentInParent<PivotController>().canRotate = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.GetComponentInParent<PivotController>() != null)
+        {
+            other.gameObject.GetComponentInParent<PivotController>().canRotate = true;
+        }
+    }
 }
