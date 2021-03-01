@@ -28,10 +28,12 @@ public class GUIManager : MonoBehaviour
 
     [SerializeField] GameObject tutorialOverlayPageOne; 
     [SerializeField] GameObject tutorialOverlayPageTwo; 
+    [SerializeField] GameObject tutorialOverlayPageThree; 
+
 
     [Header("GameOverOverlay")]
     [SerializeField] GameObject GameOverOverlay;
-    [SerializeField] TextMeshProUGUI scoreText;
+    public TextMeshProUGUI scoreText;
     [SerializeField] GameObject[] collectiblesUI = new GameObject[3]; 
     [SerializeField] Material collectibleUIMat; 
     [SerializeField] Material collectibleUIMatTransparent; 
@@ -99,7 +101,10 @@ public class GUIManager : MonoBehaviour
 
     public void GameOver(float score, float collectibles)
     {
+        if(GameOverOverlay == null)
+            return; 
         GameOverOverlay.SetActive(true); 
+        
         float clampedScore = Mathf.Clamp(score, 0,1000000); 
         scoreText.text = clampedScore.ToString(); 
 
@@ -182,18 +187,40 @@ public class GUIManager : MonoBehaviour
 
     public void SwitchTutorialPages(int page)
     {
-        if(page == 1)
+        if(tutorialOverlayPageOne == null || tutorialOverlayPageTwo == null )
+            return; 
+        
+
+        switch(page)
         {
-            tutorialOverlayPageOne.SetActive(true);
-            tutorialOverlayPageTwo.SetActive(false);
+            case 0: 
+                tutorialOverlayPageOne.SetActive(false);
+                tutorialOverlayPageTwo.SetActive(false);
+                tutorialOverlayPageThree.SetActive(false);
+                break; 
+        
+            case 1: 
+                tutorialOverlayPageOne.SetActive(true);
+                tutorialOverlayPageTwo.SetActive(false);
+                tutorialOverlayPageThree.SetActive(false);
+                break; 
+            case 2:
+                tutorialOverlayPageOne.SetActive(false);
+                tutorialOverlayPageTwo.SetActive(true);
+                tutorialOverlayPageThree.SetActive(false);
+                break; 
+            case 3: 
+                if(tutorialOverlayPageThree != null)
+                {
+                    tutorialOverlayPageOne.SetActive(false);
+                    tutorialOverlayPageTwo.SetActive(false);
+                    tutorialOverlayPageThree.SetActive(true);
+                }
+                
+                break; 
         }
-        else if(page == 2)
-        {
-            tutorialOverlayPageOne.SetActive(false);
-            tutorialOverlayPageTwo.SetActive(true);
-        }
-        else
-            return;
+
+        
     }
 
 

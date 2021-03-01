@@ -90,8 +90,17 @@ public class gameManager : MonoBehaviour
     public void GoalReached()
     {
         GameState = GAME_STATE.gameOver; 
-        CalculateScore(out score); 
-        GUIManager.instance.GameOver(score, currentCollectibles); 
+        if(GUIManager.instance.scoreText != null)
+        {
+            GUIManager.instance.GameOver(0, 1);
+
+        }
+        else 
+        {
+            CalculateScore(out score); 
+            GUIManager.instance.GameOver(score, currentCollectibles);
+        }
+         
         //Debug.Log("Goal Reached + " + score); 
         //Disable Input
         //Show EndgameScreen with Collectibles and Score
