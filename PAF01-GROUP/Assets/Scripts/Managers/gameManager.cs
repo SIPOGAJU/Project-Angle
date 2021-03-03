@@ -92,7 +92,8 @@ public class gameManager : MonoBehaviour
         GameState = GAME_STATE.gameOver; 
         if(GUIManager.instance.scoreText != null)
         {
-            GUIManager.instance.GameOver(0, 1);
+            CalculateScore(out score); 
+            GUIManager.instance.GameOver(score, currentCollectibles);
 
         }
         else 
